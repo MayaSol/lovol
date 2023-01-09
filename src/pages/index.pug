@@ -8,11 +8,40 @@ block meta
 //-   link(rel='stylesheet', href='css/some.css')
 
 block nav
+  +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
   +main-nav('10')
+  +phone
 
 block content
-  h1 Заголовок
-  p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
+  section.container(style='min-height: 500px;')
+    .banner-top
+      +main-slider()
+        +main-slider-item()
+          .main-slider__item-text
+            .main-slider__item-tagline Engineering Service Company
+            h2.main-slider__item-title Rent your <span>machine</span>
+            +btn('Reserve Now','primary')
+          .main-slider__item-img
+        +main-slider-item()
+          h1 Item 2
+          p Some text
+        +main-slider-item()
+          h1 Item 3
+          p Some text
+  section.container#catalog(style='min-height: 500px;')
+    h2 Каталог
+  section#about(style='min-height: 500px;')
+    h2 О нас
+  section#howtobuy(style='min-height: 500px;')
+    h2 Как купить
+  section#reviews(style='min-height: 1500px;')
+    h2 Отзывы
+  section#credit(style='min-height: 500px;')
+    h2 Кредит/лизинг
+  section#media(style='min-height: 500px;')
+    h2 Фото/видео
+  section#contacts(style='min-height: 500px;')
+    h2 Контакты
 
 //- block footer
 //-   p footer

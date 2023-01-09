@@ -12,7 +12,6 @@ mixin main-nav(selectedID)
   include main-nav.data.pug
 
   nav.main-nav#nav&attributes(attributes)
-    +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
     ul.main-nav__list
       each menuItem in mainMenu
         +main-nav-item(selectedID, menuItem, 1)
@@ -39,9 +38,11 @@ mixin main-nav-item(selectedID, item, level)
       thisItemClass += '  main-nav__item--lvl-' + level;
       thisLinkClass += '  main-nav__link--lvl-' + level;
     }
+    console.log(item);
 
   li(class= thisItemClass)
-    a(class= thisLinkClass, href=item.url)= item.name
+    if (!item.name == '')
+      a(class= thisLinkClass, href=item.url)= item.name
     block
 
 mixin main-nav-sublist-wrapper(level)

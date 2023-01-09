@@ -1,0 +1,14 @@
+// В этом файле должны быть стили для БЭМ-блока banner-top, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.banner-top {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-xxl) {
+    margin-left: 218px;
+    margin-top: -35px;
+  }
+
+}

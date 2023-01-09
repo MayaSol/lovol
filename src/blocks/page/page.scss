@@ -15,15 +15,87 @@
 
 
 /* stylelint-disable */
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+       url('../fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
+       url('../fonts/OpenSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+       url('../fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
+       url('../fonts/Oswald-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Medium.woff2') format('woff2'),
+       url('../fonts/Oswald-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Bold.woff2') format('woff2'),
+       url('../fonts/Oswald-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+       url('../fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+       url('../fonts/Montserrat-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+       url('../fonts/Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* stylelint-enable */
+
+
+@media
+(prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 
 .page {
@@ -33,6 +105,16 @@
   min-width: 320px;
   min-height: 100%;
 
+  &::before {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0; //new mobile whitout image
+    content: url('/img/home-1920.jpg');
+    opacity: 1;
+  }
+
   &__inner {
     min-height: 100vh;
     display: flex;
@@ -40,7 +122,44 @@
   }
 
   &__content {
+    position: relative;
     flex-grow: 1;
+
+    @media (min-width: $screen-xl) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: -110px;
+        left: -100px;
+        width: 66%;
+        height: 830px;
+        background: linear-gradient(140deg, $tw-gray-250 47%, transparent 47%);
+        opacity: 0.1;
+        z-index: -1;
+        transition: opacity 0.3;
+
+        .scrolled & {
+          opacity: 0;
+        }
+      }
+    }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: -110px;
+    //   left: -100px;
+    //   width: 66%;
+    //   height: 830px;
+    //   background: linear-gradient(140deg, $tw-gray-250 47%, transparent 47%);
+    //   opacity: 0.1;
+    //   z-index: -1;
+    //   transition: opacity 0.3;
+
+    //   .scrolled & {
+    //     opacity: 0;
+    //   }
+    // }
   }
 
   &__footer-wrapper {
@@ -339,3 +458,14 @@ pre {
   }
 }
 
+.container-top {
+  margin-left: 110px;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+// .container {
+//   @include container;
+// }

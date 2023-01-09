@@ -12,7 +12,8 @@ mixin phone(mods)
    }
 
   .phone(class=allMods)&attributes(attributes)
-    .phone__inner
-      a(href='tel:+74991102131') +7 (499) 110-21-31
+    a(href='tel:+74991102131')
+      +svg('phone',[20,20])
+      span +7 (499) 110-21-31
 
 

@@ -1,0 +1,135 @@
+// В этом файле должны быть стили для БЭМ-блока main-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-slider {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    min-height: 300px;
+  }
+
+  .swiper-pagination-bullet {
+    width: auto;
+    height: 100%;
+    max-height: 1.5em;
+    margin-top: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 38px;
+    color: $tw-gray-350;
+    border-radius: 0 !important;
+    opacity: 1;
+    background-color: transparent;
+    transition: max-height 0.4s;
+
+    &:hover,
+    &:focus {
+      color: $tw-gray-600;
+    }
+
+
+    // &--prev {
+    //   // background-color: lightblue;
+    // }
+
+    // &--current {
+    //   // background-color: red;
+    // }
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $tw-gray-330;
+      }
+  }
+
+  &__pagination {
+    font-family: 'Oswald';
+    top: 25%;
+    bottom: 25% !important;
+    right: 0;
+    left: auto !important;
+    width: auto !important;
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .swiper-pagination-bullet {
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+
+  .swiper-pagination-bullet__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .swiper-pagination-bullet-active {
+    color: $tw-gray-600;
+    max-height: 280px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: 770px;
+    border: 1px solid red;
+  }
+
+  &__item-text {
+    margin-top: 60px;
+    align-items: center;
+  }
+
+  &__item-title {
+    width: 500px;
+    margin-top: 55px;
+    margin-bottom: 70px;
+    font-family: 'Montserrat';
+    font-size: 105px;
+    font-weight: 800;
+    line-height: 68%;
+    color: $tw-gray-600;
+
+    span {
+      color: $tw-orange-500;
+    }
+  }
+
+  &__item-tagline {
+    position: relative;
+    width: 232px;
+    padding-top: 18px;
+    font-family: 'Oswald';
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #21313D;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 45px;
+      background-color: $tw-orange-500;
+      top: 0;
+      left: 0;
+    }
+  }
+
+}

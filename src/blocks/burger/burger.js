@@ -17,6 +17,7 @@ ready(function(){
     if (targetId && targetClassToggle) {
       this.classList.toggle('burger--close');
       document.getElementById(targetId).classList.toggle(targetClassToggle);
+      document.body.classList.toggle('noscroll');
     }
   }
 

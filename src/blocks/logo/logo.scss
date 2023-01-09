@@ -6,10 +6,41 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
+
+  &--lg {
+    align-self: stretch;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #{$block-name}--lg & {
+      padding-right: 18px;
+      background: linear-gradient(90deg, transparent 50%, transparent 50%, #{$tw-gray-200} 50%);
+
+      @media (max-width: 480px) {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100px;
+  }
+
+  &__caption {
+    width: 90px;
+    margin-top: 5px;
+  }
 
   img {
     display: block;
+    max-width: 100%;
   }
+
 }

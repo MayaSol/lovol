@@ -6,16 +6,46 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1;
 
+  .page-header & {
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-top: -10px;
+    color: $tw-gray-600;
+  }
+
+  svg {
+    margin-right: 15px;
+    display: none;
+
+    @media (min-width: $screen-sm) {
+      display: inline-block;
+    }
+  }
+
   a {
+    display: flex;
+    align-items: center;
     color: currentColor;
     text-decoration: none;
 
+    .page-header & {
+      color: $tw-gray-600;
+
+      @media (max-width: ($menu-desktop-width - 1)) {
+        margin-right: auto;
+      }
+    }
+
     &:hover {
       color: currentColor;
+
+      .page-header & {
+        color: $tw-gray-800;
+      }
     }
   }
 

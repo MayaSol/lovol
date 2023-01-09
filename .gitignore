@@ -1,4 +1,8 @@
 design/
+tmp/
+src/css/
+
+
 build/*
 !build/readme.md
 
@@ -25,3 +29,4 @@ node_modules/
 .idea
 ex_files
 Thumbs.db
+

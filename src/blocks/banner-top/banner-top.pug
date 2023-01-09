@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (banner-top)
+
+mixin banner-top(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +banner-top('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' banner-top--' + modsList[i].trim();
+      }
+    }
+
+  .banner-top(class=allMods)&attributes(attributes)
+    .banner-top__inner
+      block

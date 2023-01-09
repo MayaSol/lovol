@@ -21,4 +21,9 @@ mixin logo(href, mods)
     }
 
   a.logo(class=allMods, href=href)&attributes(attributes)
-    block
+    .logo__inner
+      .logo__img
+        img(src='/img/logo-img.png' alt="Логотип" width='100')
+      .logo__caption
+        img(src='/img/lovol.png' alt="Lovol" width='90')
+

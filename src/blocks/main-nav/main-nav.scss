@@ -7,7 +7,24 @@
   $block-name:                &; // #{$block-name}__element
 
   position: relative;
+  flex-grow: 1;
+  margin-right: 5%;
+  margin-left: 110px;
+  margin-top: -10px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  color: $tw-gray-400;
   z-index: 10;
+
+  @media (max-width: ($menu-desktop-width - 1)) {
+    width: 0;
+    margin: 0;
+  }
+
+  @media (max-width: $screen-xxl) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
   // первый уровень
   &__list {
@@ -21,6 +38,12 @@
       // открытие/закрытие меню только в случае работающего JS
 
       .js & {
+        position: fixed;
+        width: 100%;
+        margin-left: 0;
+        padding-top: 51px;
+        left: 0;
+        top: 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s;
@@ -33,6 +56,7 @@
       .js #{$block-name}--open & {
         max-height: 1000px;
         transition: max-height 0.6s;
+        border-bottom: 1px solid $tw-gray-600;
 
         &--lvl-2 {
           max-height: none;
@@ -58,24 +82,71 @@
   &__item {
     position: relative;
 
-    &--active {
+    @media (max-width: ($menu-desktop-width - 1)) {
+      background-color: $body-bg;
+    }
 
-      & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
-        color: #000;
+    a {
+      color: $tw-gray-400;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $tw-gray-600;
       }
     }
+
+    &:first-child {
+      display: flex;
+      position: relative;
+      flex-grow: 1;
+      color: $tw-gray-600;
+      pointer-events: none;
+
+      @media (max-width: $screen-xxl) {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        flex-grow: 1;
+        position: relative;
+        top: 50%;
+        height: 1px;
+        background-color: $tw-gray-600;
+
+        @media (max-width: $menu-desktop-width - 1) {
+          display: none;
+        }
+      }
+
+      a, span {
+        display: inline-block;
+        padding-left: 0;
+      }
+    }
+
+    // &--active {
+
+    //   & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
+    //     color: #000;
+    //   }
+    // }
   }
 
   &__link {
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
-    background-color: #fff;
+
+    @media (max-width: ($screen-xl - 1)) {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $gray-lightest;
     }
 
     &--lvl-2 {
@@ -92,6 +163,10 @@
       @media (max-width: ($menu-desktop-width - 1)) {
         padding-left: 3em;
       }
+    }
+
+    #{$block-name}__item:first-child & {
+      color: $tw-gray-600;
     }
   }
 
@@ -153,6 +228,9 @@
     border: none;
     padding: 0;
     background: none;
+    z-index: 20;
+    order: 10;
+    margin-left: 30px;
 
     @media (min-width: $menu-desktop-width) {
       display: none;
