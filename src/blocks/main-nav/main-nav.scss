@@ -21,7 +21,7 @@
     margin: 0;
   }
 
-  @media (max-width: $screen-xxl) {
+  @media (max-width: $screen-xxl - 1) {
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -103,7 +103,7 @@
       color: $tw-gray-600;
       pointer-events: none;
 
-      @media (max-width: $screen-xxl) {
+      @media (max-width: $screen-xxl - 1) {
         display: none;
       }
 
@@ -218,8 +218,6 @@
       }
     }
   }
-
-
 
   // переключатель
 

@@ -7,7 +7,6 @@ ready(function(){
   let viewportHeight = window.innerHeight; //!!!!
   window.addEventListener('resize', throttle(() => {
     viewportHeight = window.innerHeight;
-    console.log(viewportHeight);
   }));
 
   let navbar = document.getElementsByClassName('page-header')[0];
@@ -15,7 +14,6 @@ ready(function(){
   let navLinks = navbar.getElementsByClassName('main-nav__link');
   let navSections = {};
   let currentLink = navbar.querySelector('.main-nav__item:first-child');
-    console.log(viewportHeight);
   for (let i=0; i<navLinks.length; i++) {
     if (navLinks[i].hash) {
       navSections[navLinks[i].hash] = document.querySelector(navLinks[i].hash);
@@ -40,13 +38,13 @@ ready(function(){
       }
     }
 
-    console.log(scrollPos);
-    console.log(scrollPos + viewportHeight);
+    // console.log(scrollPos);
+    // console.log(scrollPos + viewportHeight);
 
     for (link of navLinks) {
 
       if  (navSections[link.hash]) {
-        console.log(link.hash + ': ' + navSections[link.hash].offsetTop);
+        // console.log(link.hash + ': ' + navSections[link.hash].offsetTop);
         let top = scrollPos + navBarHeight;
         let bottom = scrollPos + viewportHeight;
         let sectionStart = navSections[link.hash].offsetTop;

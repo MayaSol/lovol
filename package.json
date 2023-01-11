@@ -92,6 +92,7 @@
   "dependencies": {
     "autosize": "^4.0.2",
     "baron": "^3.0.3",
+    "bootstrap": "^5.2.3",
     "choices.js": "^9.0.1",
     "closest": "0.0.1",
     "jquery": "^3.4.1",

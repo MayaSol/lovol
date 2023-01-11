@@ -1,0 +1,86 @@
+// В этом файле должны быть стили для БЭМ-блока form-find, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.form-find {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  margin-top: 40px;
+  padding-top: 45px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fff;
+  box-shadow: 0px 26px 162px -53px rgba(0, 46, 80, 0.24);
+  border-radius: 12px;
+
+
+  @media (min-width: $screen-xl) {
+    margin-top: 175px;
+    margin-bottom: 190px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 97px;
+    padding-bottom: 103px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $screen-lg) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px 25px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $tw-blue-800;
+      border-radius: 5px;
+      z-index: -1;
+      transform: skew(-10deg);
+    }
+
+    @media (min-width: $screen-xl) {
+      left: 76px;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,50%);
+  }
+}

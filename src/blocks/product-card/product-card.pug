@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-card)
+
+mixin product-card(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-card('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-card--' + modsList[i].trim();
+      }
+    }
+
+  .product-card(class=allMods)&attributes(attributes)
+    .product-card__img
+      img(src=props.src)
+    .product-card__title Roadroller
+    .product-card__desc Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.
+    .product-card__price <span>58 748 598</span> <span class='rub-sign'>&#x20BD;</span>
+    +btn('Подробнее','regular, more')
+      block

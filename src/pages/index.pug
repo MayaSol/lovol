@@ -22,16 +22,245 @@ block content
             h2.main-slider__item-title Rent your <span>machine</span>
             +btn('Reserve Now','primary')
           .main-slider__item-img
+            img(src='/img/TB604-cabin.jpg' alt='TB604')
         +main-slider-item()
           h1 Item 2
           p Some text
         +main-slider-item()
           h1 Item 3
           p Some text
-  section.container#catalog(style='min-height: 500px;')
-    h2 Каталог
-  section#about(style='min-height: 500px;')
-    h2 О нас
+  section.section-find.section-container#catalog
+    .section-title
+      .section-title__num 01
+      .section-title__caption Найди свой <span>лучший трактор</span>
+    +form()(class='form-find')
+      .form-find__title Подобрать спецтехнику
+      .form-find__inner
+        +field-select(
+          '',
+          {
+            name: 'testselect',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Мощность',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'power'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Тяговое усилие',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'effort'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Сила подъема навески',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'force'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Масса',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'mass'
+        )
+      +btn('Подобрать','primary')(class='form-find__submit')
+  section.section-catalog.section-container#catalog
+    .section-title
+      .section-title__num 02
+      .section-title__caption Популярные модели <span>спецтехники</span>
+    .tabs.tabs--catalog
+      .nav.nav-pills.tabs__nav(role="tablist" aria-orientation="vertical")
+        .tabs__link.nav-link.active#v-pills-home-tab(data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true") Коммунальные
+        .tabs__link.nav-link#v-pills-profile-tab(data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false") Сельскохозяйственные
+        .tabs__link.nav-link#v-pills-messages-tab(data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false") Строительные
+        .tabs__link.nav-link#v-pills-settings-tab(data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false") Доп. оборудование
+      .tab-content.tabs__tab-content#v-pills-tabContent
+        .tab-pane.fade.show.active#v-pills-home(role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0")
+          +catalog-slider
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TE244-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+        .tab-pane.fade#v-pills-profile(role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0")
+          +catalog-slider
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+        .tab-pane.fade#v-pills-messages(role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0")
+          +catalog-slider
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TE244-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+        .tab-pane.fade#v-pills-settings(role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0")
+          +catalog-slider
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TE244-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TE244-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[479px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+            +catalog-slider-item(class='w-[382px]')
+              +product-card({
+                src: '/img/TB604-cabin.jpg'
+              })
+
   section#howtobuy(style='min-height: 500px;')
     h2 Как купить
   section#reviews(style='min-height: 1500px;')

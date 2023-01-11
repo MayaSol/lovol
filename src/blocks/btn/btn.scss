@@ -2,13 +2,13 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.btn {
+
+@mixin btn {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 0;
   border-radius: 54px;
-  // border: 1px solid $gray-lighter;
   border: 0;
   padding: $field-padding-vertical  $field-padding-horizontal;
   vertical-align: middle;
@@ -32,13 +32,8 @@
   &:focus {
     text-decoration: none;
     color: $text-color;
-    background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
+    // background-color: darken($gray-lightest, 10%);
   }
-
-  // &:visited {
-  //   color: $text-color;
-  // }
 
   &:active,
   &:focus {
@@ -57,47 +52,46 @@
       pointer-events: none;
     }
   }
+}
+
+@mixin btn-primary {
+  padding: 15px 42px;
+  font-weight: 600;
+  background-color: $tw-orange-500;
+  box-shadow: 0px 8px 16px -5px rgba(255, 115, 0, 0.11);
+  text-transform: uppercase;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: $tw-orange-600;
+  }
+}
+
+.btn {
+  @include btn;
 
   &--primary {
-    padding: 15px 42px;
-    font-weight: 600;
-    background-color: $tw-orange-500;
-    box-shadow: 0px 8px 16px -5px rgba(255, 115, 0, 0.11);
-    text-transform: uppercase;
-    color: #fff;
+    @include btn-primary;
+  }
+
+  &--regular {
+    padding: 12px 30px 13px 30px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    color: $tw-gray-600;
+    background-color: transparent;
+    border: 1px solid $tw-gray-600;
+    border-radius: 70px;
 
     &:hover,
     &:focus,
     &:active {
       color: #fff;
-      background-color: $tw-orange-600;
+      background-color: $tw-gray-600;
     }
   }
-
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
-
-
-
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   // border: 1px solid $color-main;
-
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     // border-color: darken($color-main, 12%);
-  //   }
-
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     // border-color: $color-main;
-  //   }
-  // }
 }

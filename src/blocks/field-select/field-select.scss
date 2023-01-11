@@ -2,18 +2,55 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
+
 .field-select {
 
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: $typo-margin-vertical;
 
   &__name {
     @include field-name;
   }
 
   &__select-wrap {}
+
+  .form-find & {
+    margin-bottom: 25px;
+
+    &:first-child {
+      z-index: 10;
+    }
+    &:nth-child(2) {
+      z-index: 9;
+    }
+    &:nth-child(3) {
+      z-index: 8;
+    }
+    &:nth-child(4) {
+      z-index: 7;
+    }
+    &:nth-child(5) {
+      z-index: 6;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 48%;
+      margin-bottom: 0;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 0;
+      flex-grow: 1;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-3xl) {
+      margin-right: 20px;
+    }
+  }
 
   // Оформление штатного селекта
   // &__select {
@@ -55,8 +92,6 @@
     @include field-help-text;
   }
 
-
-
   &--error {
     color: $color-danger;
 
@@ -85,7 +120,7 @@
   position: relative;
 
   &:focus {
-    outline: 0;
+    outline: none;
 
     &:not(.is-disabled) {
 
@@ -98,19 +133,22 @@
   &:after {
     content: '';
     position: absolute;
-    top: 7px;
-    right: 16px;
-    width: 14px;
-    height: 14px;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    top: 26px;
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    // border-left: 2px solid #3B5566;
+    // border-bottom: 2px solid #3B5566;
     pointer-events: none;
-    transform: rotate(-45deg);
     transition: all 0.3s;
+    background-image: url('/img/arrow-down.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 3;
   }
 
   &.is-open:after {
-    transform: translateY(7px) rotate(135deg);
+    transform: rotate(180deg);
   }
 
   .is-hidden {
@@ -118,13 +156,15 @@
   }
 
   &__inner {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    padding: $field-padding-vertical 40px $field-padding-vertical $field-padding-horizontal;
-    background: #fff;
+    position: relative;
+    border-radius: 66px;
+    padding: 12px 46px 13px 24px;
+    background-color: $tw-gray-50;
     font-size: 1em;
     line-height: 1.5;
+    box-shadow: none !important;
     cursor: pointer;
+    z-index: 2;
 
     #{$block-name}__item--selectable {
       max-width: 100%;
@@ -134,17 +174,35 @@
     }
   }
 
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-family: 'OpenSans';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    color: $tw-slate-600;
+
+    i {
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+  }
+
   &__list--dropdown {
     display: none;
     position: absolute;
     z-index: 1;
     top: 100%;
     width: 100%;
-    margin-top: -1px;
-    border: 1px solid $border-color;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    background-color: #fff;
+    margin-top: -35px;
+    padding-top: 35px;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: $tw-gray-50;
     word-break: break-all;
     overflow: hidden;
 
@@ -155,6 +213,14 @@
       &.is-highlighted {
         background: $gray-lightest;
       }
+    }
+
+    #{$block-name}__item {
+      padding-left: 27px !important;
+    }
+
+    .choices__placeholder {
+      display: none;
     }
   }
 

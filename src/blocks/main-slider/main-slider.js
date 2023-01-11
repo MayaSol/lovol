@@ -3,7 +3,7 @@ import Swiper, { Pagination } from 'swiper';
 
 ready(function() {
   console.log('main-slider');
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.main-slider', {
     modules: [Pagination],
     pagination: {
       el: '.main-slider__pagination',

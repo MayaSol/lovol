@@ -6,13 +6,15 @@
   width: 100%;
   min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
   margin: 0;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  border-radius: 66px;
+  padding: 22px 27px;
   line-height: $line-height;
-  font-size: 1em;
-  font-family: inherit;
-  background-color: #fff;
+  font-family: 'OpenSans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: $tw-slate-600;
+  background-color: $tw-gray-50;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
 

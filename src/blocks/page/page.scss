@@ -41,14 +41,17 @@
 }
 @font-face {
   font-family: 'Oswald';
-  src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
-       url('../fonts/Oswald-Regular.woff') format('woff');
+  src: url('../fonts/Oswald-Regular.woff2') format('woff'),
+       url('../fonts/Oswald-Regular.woff2') format('woff2');
+  // src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
+  //      url('../fonts/Oswald-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Oswald';
+  // src: url('../fonts/Oswald-Medium.ttf') format('truetype');
   src: url('../fonts/Oswald-Medium.woff2') format('woff2'),
        url('../fonts/Oswald-Medium.woff') format('woff');
   font-weight: 500;
@@ -105,15 +108,15 @@
   min-width: 320px;
   min-height: 100%;
 
-  &::before {
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0; //new mobile whitout image
-    content: url('/img/home-1920.jpg');
-    opacity: 1;
-  }
+  // &::before {
+  //   z-index: -1;
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0; //new mobile whitout image
+  //   content: url('/img/home-1920.jpg');
+  //   opacity: 1;
+  // }
 
   &__inner {
     min-height: 100vh;
@@ -466,6 +469,72 @@ pre {
   overflow: hidden;
 }
 
+.section-title {
+  font-family: 'Oswald';
+}
+
+.section-title__num {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 0.9;
+  color: $tw-slate-600;
+  opacity: 0.16;
+
+  @media (min-width: $screen-xl) {
+    font-size: 73px;
+  }
+}
+
+.section-title__caption {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $tw-slate-400;
+  text-transform: uppercase;
+
+  span {
+    display: block;
+    font-weight: 700;
+    font-size: 30px;
+    color: $tw-gray-600;
+  }
+}
+
+.section-container {
+
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: $screen-xl) {
+    max-width: 1168px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.section-find {
+  margin-top: 70px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 121px;
+  }
+}
+
+.section-catalog.section-container {
+  @media (min-width: $screen-xl) {
+    position: relative;
+    left: 50%;
+    max-width: 1318px;
+    margin-left: 0;
+    margin-right: 0;
+    transform: translateX(-584px);
+  }
+}
+
+.section-catalog {
+  margin-top: 120px;
+}
 // .container {
 //   @include container;
 // }
