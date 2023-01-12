@@ -290,23 +290,22 @@ block content
     .section-title
       .section-title__num 04
       .section-title__caption Как купить трактор в <span>Авто Премиум</span>
-      .info-list
-        +info-list-item({
-          icon_classes: 'fa-solid fa-magnifying-glass',
-          title: 'Search your equipments',
-          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-        })
-        +info-list-item({
-          icon_classes: 'fa-solid fa-circle-half-stroke',
-          title: 'Compare your selection',
-          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-        })
-        +info-list-item({
-          icon_classes: 'fa-solid fa-book',
-          title: 'Book for rentals',
-          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-        })
-
+    .info-list
+      +info-list-item({
+        icon_classes: 'fa-solid fa-magnifying-glass',
+        title: 'Search your equipments',
+        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+      })
+      +info-list-item({
+        icon_classes: 'fa-solid fa-circle-half-stroke',
+        title: 'Compare your selection',
+        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+      })
+      +info-list-item({
+        icon_classes: 'fa-solid fa-book',
+        title: 'Book for rentals',
+        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+      })
   section.section-about#aboutus(data-backtext='LOVOL')
       .about__img
         img(src='/img/TB754-cabin.png' alt='модель TB754')
@@ -335,8 +334,34 @@ block content
           number: '18',
           caption: 'Employees'
         })
-  section#media
-    h2 Фото/видео
+  section.section-reviews#reviews(data-backtext='Отзывы')
+    .section-container
+      .section-title
+        .section-title__num 05
+        .section-title__caption Отзывы покупателей <span>Что думают наши клиенты</span>
+      .reviews-slider__wrapper
+        +reviews-slider
+          +reviews-slide-item({
+            url: '/img/man.jpg',
+            title: 'Satisfied With The Facilities At excavator Construction Equipment Rental',
+            text: 'At dolore magna aliqua umt enim ad mini veniam quis ulamco aliquip commodo da consequat duis aute irue derit voluptate cillum dolore afugiat.',
+            name: 'Albert Francis',
+            job: 'CEO @ Amazon'
+          })
+          +reviews-slide-item({
+            url: '/img/man.jpg',
+            title: 'Satisfied With The Facilities At excavator Construction Equipment Rental',
+            text: 'At dolore magna aliqua umt enim ad mini veniam quis ulamco aliquip commodo da consequat duis aute irue derit voluptate cillum dolore afugiat.',
+            name: 'Albert Francis',
+            job: 'CEO @ Amazon'
+          })
+          +reviews-slide-item({
+            url: '/img/man.jpg',
+            title: 'Satisfied With The Facilities At excavator Construction Equipment Rental',
+            text: 'At dolore magna aliqua umt enim ad mini veniam quis ulamco aliquip commodo da consequat duis aute irue derit voluptate cillum dolore afugiat.',
+            name: 'Albert Francis',
+            job: 'CEO @ Amazon'
+          })
   section#contacts
     h2 Контакты
 

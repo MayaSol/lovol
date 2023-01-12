@@ -652,12 +652,74 @@ pre {
   &::before {
     @media (min-width: $screen-xl) {
       width: 800px;
-      left: 50%;
+      left: 40%;
       bottom: 0;
       transform: translateX(-70%);
       color: $tw-blue-850;
       text-shadow: 0px 50px 74px #00111D;
       opacity: 0.3;
+      z-index: 5;
+    }
+  }
+}
+
+.section-reviews {
+  @include background-text;
+
+  &::before {
+    @media (min-width: $screen-xl) {
+      width: 100%;
+      left: 30%;
+      top: 30px;
+      color: $tw-blue-850;
+      color: transparent;
+      background: linear-gradient(180deg, #7695AB 2.38%, rgba(91, 117, 136, 0.21) 79.08%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      opacity: 0.3;
+    }
+  }
+}
+
+.swiper-navbtn {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: $tw-gray-250;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $tw-blue-800;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    background-image: url('/img/arrow-left-white.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%,-50%);
+  }
+
+  &--next {
+    &::before {
+      transform: translate(-50%,-50%) rotate(180deg);
+    }
+  }
+
+  &--prev {
+    margin-right: 20px;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 0;
+      margin-bottom: 20px;
     }
   }
 }

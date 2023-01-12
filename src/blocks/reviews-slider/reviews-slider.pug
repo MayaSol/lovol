@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (reviews-slider)
+
+mixin reviews-slider(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +reviews-slider('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews-slider--' + modsList[i].trim();
+      }
+    }
+
+  .reviews-slider.swiper(class=allMods)&attributes(attributes)
+    .reviews-slider__inner.swiper-wrapper
+      block
+    .reviews-slider__navigation
+      button.swiper-navbtn.swiper-navbtn--prev
+      button.swiper-navbtn.swiper-navbtn--next
+    .reviews-slider__count
+      .reviews-slider__current
+      .reviews-slider__amount
+
+mixin reviews-slide-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews-slider__item--' + modsList[i].trim();
+      }
+    }
+
+  .reviews-slider__item.swiper-slide(class=allMods)&attributes(attributes)
+    .reviews-slider__title=props.title
+    .reviews-slider__text=props.text
+    .reviews-slider__author
+      .reviews-slider__author-name=props.name
+      .reveiws-slider__job=props.job
+    .reviews-slider__img
+      img(src=props.url)
