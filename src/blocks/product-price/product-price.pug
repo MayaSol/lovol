@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-price)
+
+mixin product-price(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-price('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-price--' + modsList[i].trim();
+      }
+    }
+
+  .product-price(class=allMods)&attributes(attributes)
+    block

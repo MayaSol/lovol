@@ -8,6 +8,7 @@ ready(function(){
       nextEl: '.catalog-slider__nav--next',
       prevEl: '.catalog-slider__nav--prev',
     },
+    focusableElements: 'input, select, option, textarea, button, video, label',
     slidesPerView: 1,
     breakpoints: {
       // when window width is >= 320px

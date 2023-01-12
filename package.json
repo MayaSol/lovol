@@ -97,6 +97,7 @@
     "closest": "0.0.1",
     "jquery": "^3.4.1",
     "lodash": "^4.17.21",
+    "micromodal": "^0.4.10",
     "node-sass": "^6.0.1",
     "object-fit-images": "^3.2.4",
     "svg4everybody": "^2.1.8",

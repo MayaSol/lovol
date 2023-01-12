@@ -94,4 +94,51 @@
       background-color: $tw-gray-600;
     }
   }
+
+  &--secondary {
+    padding: 14px 24px;
+    font-family: 'OpenSans';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    border-radius: 0;
+    background-color: $tw-blue-800;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: $tw-blue-900;
+    }
+  }
+
+  &--secondary-gray {
+    background-color: $tw-gray-400;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: $tw-gray-500;
+    }
+  }
+
+  &--submit {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 22px 32px;
+    font-family: 'OpenSans';
+    font-weight: 600;
+    font-size: 28px;
+    color: #fff;
+    border-radius: 0;
+    background: linear-gradient(270deg, #005E9D -4.57%, #16009D 92.99%);
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: linear-gradient(270deg, $tw-blue-900 -4.57%, $tw-blue-800 92.99%);
+    }
+  }
 }

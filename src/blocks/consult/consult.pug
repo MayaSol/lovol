@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (consult)
+
+mixin consult(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +consult('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' consult--' + modsList[i].trim();
+      }
+    }
+
+  .consult(class=allMods)&attributes(attributes)
+    block

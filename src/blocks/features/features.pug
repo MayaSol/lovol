@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (features)
+
+mixin features(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +features('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' features--' + modsList[i].trim();
+      }
+    }
+
+  .features(class=allMods)&attributes(attributes)
+    block
+
+
+mixin features-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' features__item--' + modsList[i].trim();
+      }
+    }
+
+  .features__item(class=allMods)&attributes(attributes)
+    .features__icon
+      i(class=props.icon_classes)
+    .features__title= props.title
+    .features__text= props.text

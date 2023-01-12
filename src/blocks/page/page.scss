@@ -8,7 +8,8 @@
 // Сделаем viewport великим снова! (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
 @at-root {
 
-  @-ms-viewport { // stylelint-disable-line
+  @-ms-viewport {
+    // stylelint-disable-line
     width: device-width;
   }
 }
@@ -18,83 +19,100 @@
 @font-face {
   font-family: 'OpenSans';
   src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-       url('../fonts/OpenSans-Regular.woff') format('woff');
+    url('../fonts/OpenSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'OpenSans';
   src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
-       url('../fonts/OpenSans-Medium.woff') format('woff');
+    url('../fonts/OpenSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'OpenSans';
   src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-       url('../fonts/OpenSans-Bold.woff') format('woff');
+    url('../fonts/OpenSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Oswald';
   src: url('../fonts/Oswald-Regular.woff2') format('woff'),
-       url('../fonts/Oswald-Regular.woff2') format('woff2');
+    url('../fonts/Oswald-Regular.woff2') format('woff2');
   // src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
   //      url('../fonts/Oswald-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Oswald';
   // src: url('../fonts/Oswald-Medium.ttf') format('truetype');
   src: url('../fonts/Oswald-Medium.woff2') format('woff2'),
-       url('../fonts/Oswald-Medium.woff') format('woff');
+    url('../fonts/Oswald-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Oswald';
   src: url('../fonts/Oswald-Bold.woff2') format('woff2'),
-       url('../fonts/Oswald-Bold.woff') format('woff');
+    url('../fonts/Oswald-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
-       url('../fonts/Montserrat-Bold.woff') format('woff');
+    url('../fonts/Montserrat-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'),
-       url('../fonts/Montserrat-ExtraBold.woff') format('woff');
+    url('../fonts/Montserrat-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
-       url('../fonts/Roboto-Regular.woff') format('woff');
+    url('../fonts/Roboto-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+    url('../fonts/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* stylelint-enable */
 
 
-@media
-(prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
@@ -181,8 +199,8 @@
 }
 
 body {
-  display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
-  flex-direction: column;  // и прижимаем footer в IE 10-11
+  display: flex; // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+  flex-direction: column; // и прижимаем footer в IE 10-11
   margin: 0;
   min-height: 100%;
   word-break: break-word;
@@ -221,12 +239,12 @@ label,
 select,
 textarea {
   touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
-  margin: 0;                  // Убираем margin в Firefox и Safari
+  margin: 0; // Убираем margin в Firefox и Safari
 }
 
 button,
 input {
-  overflow: visible;    // Покажем торчащее в Edge
+  overflow: visible; // Покажем торчащее в Edge
   text-transform: none; // Уберём наследование text transform в Firefox
 }
 
@@ -255,7 +273,7 @@ input[type='month'] {
 }
 
 textarea {
-  overflow: auto;   // Удаление верт. скролла в IE.
+  overflow: auto; // Удаление верт. скролла в IE.
   resize: vertical; // Правильное изменение размеров
 }
 
@@ -305,8 +323,8 @@ a {
 
 hr {
   box-sizing: content-box; // Проблема Firefox
-  height: 0;               // Проблема Firefox
-  overflow: visible;       // Проблема Edge и IE
+  height: 0; // Проблема Firefox
+  overflow: visible; // Проблема Edge и IE
   margin-top: $typo-margin-vertical * 2;
   margin-bottom: $typo-margin-vertical * 2;
   border: 0;
@@ -327,12 +345,36 @@ h6 {
   color: currentColor;
 }
 
-h1 { font-size: $font-size-h1; } // stylelint-disable-line
-h2 { font-size: $font-size-h2; } // stylelint-disable-line
-h3 { font-size: $font-size-h3; } // stylelint-disable-line
-h4 { font-size: $font-size-h4; } // stylelint-disable-line
-h5 { font-size: $font-size-h5; } // stylelint-disable-line
-h6 { font-size: $font-size-h6; } // stylelint-disable-line
+h1 {
+  font-size: $font-size-h1;
+}
+
+// stylelint-disable-line
+h2 {
+  font-size: $font-size-h2;
+}
+
+// stylelint-disable-line
+h3 {
+  font-size: $font-size-h3;
+}
+
+// stylelint-disable-line
+h4 {
+  font-size: $font-size-h4;
+}
+
+// stylelint-disable-line
+h5 {
+  font-size: $font-size-h5;
+}
+
+// stylelint-disable-line
+h6 {
+  font-size: $font-size-h6;
+}
+
+// stylelint-disable-line
 
 p,
 ul,
@@ -473,6 +515,23 @@ pre {
   font-family: 'Oswald';
 }
 
+.section-caption-lg {
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  color: $tw-gray-600;
+  text-transform: uppercase;
+
+  span {
+    color: $tw-orange-500;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 48px;
+  }
+}
+
 .section-title__num {
   font-size: 50px;
   font-weight: 500;
@@ -507,7 +566,7 @@ pre {
   padding-right: 15px;
 
   @media (min-width: $screen-xl) {
-    max-width: 1168px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -535,6 +594,74 @@ pre {
 .section-catalog {
   margin-top: 120px;
 }
+
+.section-choose {
+  .section-caption-lg {
+    margin-top: 40px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 120px;
+    }
+  }
+}
+
+.section-howtobuy {
+  margin-top: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 120px;
+  }
+}
+
+.section-howtobuy {
+  position: relative;
+
+  @media (min-width: $screen-xl) {
+    &::before {
+      content: attr(data-backtext);
+      position: absolute;
+      left: 30%;
+      top: 0;
+      height: 296px;
+      width: 100%;
+      font-family: 'Oswald';
+      font-size: 300px;
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #7695AB 2.38%, rgba(91, 117, 136, 0.21) 79.08%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      opacity: 0.25;
+    }
+  }
+}
+
+.section-about {
+  @include background-text;
+  margin-top: 95px;
+  margin-bottom: 90px;
+
+  @media (min-width: $screen-lg) {
+    margin-top: 295px;
+    margin-bottom: 290px;
+  }
+
+  &::before {
+    @media (min-width: $screen-xl) {
+      width: 800px;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-70%);
+      color: $tw-blue-850;
+      text-shadow: 0px 50px 74px #00111D;
+      opacity: 0.3;
+    }
+  }
+}
+
 // .container {
 //   @include container;
 // }

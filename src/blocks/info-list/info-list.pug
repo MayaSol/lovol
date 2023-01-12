@@ -1,0 +1,48 @@
+//- Все примеси в этом файле должны начинаться c имени блока (info-list)
+
+mixin info-list(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +info-list('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-list--' + modsList[i].trim();
+      }
+    }
+
+  .info-list(class=allMods)&attributes(attributes)
+    block
+
+
+mixin info-list-item(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +info-list('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-list--' + modsList[i].trim();
+      }
+    }
+
+  .info-list__item(class=allMods)&attributes(attributes)
+    .info-list__icon
+      i(class=props.icon_classes)
+    .info-list__title= props.title
+    .info-list__text= props.text
+    block

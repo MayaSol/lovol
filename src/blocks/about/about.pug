@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (about)
+
+mixin about(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +about('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' about--' + modsList[i].trim();
+      }
+    }
+
+  .about(class=allMods)&attributes(attributes)
+    block
+
+
+mixin about-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' about__item--' + modsList[i].trim();
+      }
+    }
+
+  .about__item(class=allMods)&attributes(attributes)
+    .about__icon
+      i(class=props.icon_classes)
+    .about__number=props.number
+    .about__caption=props.caption
+

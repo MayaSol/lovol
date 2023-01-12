@@ -1,0 +1,74 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-slider)
+
+mixin product-slider-main(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-slider('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-slider-main--' + modsList[i].trim();
+      }
+    }
+
+  .product-slider.product-slider-main.swiper(class=allMods)&attributes(attributes)
+    .product-slider-main__inner.swiper-wrapper
+      block
+
+
+mixin product-item-main(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-slider-main__item--' + modsList[i].trim();
+      }
+    }
+
+  .product-slider.product-slider-main__item.swiper-slide(class=allMods)&attributes(attributes)
+    .product-slider-main__img
+      img(src=props.src alt=props.model)
+    block
+
+mixin product-slider-nav(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-slider--' + modsList[i].trim();
+      }
+    }
+
+  .product-slider-nav.swiper(class=allMods)&attributes(attributes)
+    .product-slider-nav__inner.swiper-wrapper
+      block
+
+mixin product-item-nav(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-slider-nav__item--' + modsList[i].trim();
+      }
+    }
+
+  .product-slider-nav__item.swiper-slide(class=allMods)&attributes(attributes)
+    .product-slider-nav__img
+      img(src=props.src alt=props.model)
+    block

@@ -3,63 +3,38 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .close {
-  display: inline-block;
   position: relative;
-  z-index: 1;
-  width: 30px;
-  border: none;
-  padding: 0;
-  line-height: 30px;
-  background: transparent;
-  user-select: none;
-  cursor: pointer;
+  opacity: 1;
 
-  span {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: $toggler-part-height;
-    vertical-align: middle;
-    font-size: 0;
-    color: transparent;
-    background: transparent;
+  &.modal__close {
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
 
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: $toggler-part-height;
-      background: $toggler-part-bg-color;
-      transform-origin: 50% 50%;
-    }
-
-    &:before {
-      transform: rotate3d(0, 0, 1, 45deg);
-    }
-
-    &:after {
-      transform: rotate3d(0, 0, 1, -45deg);
+    &::before,
+    &::after {
+      height: 23px;
+      width: 2px;
     }
   }
-
-  // &--sm {
-
-  //   $toggler-part-height:     1px;
-
-  //   width: 30px;
-  //   line-height: 30px;
-
-  //   span {
-  //     width: 60%;
-
-  //     &:before,
-  //     &:after {
-  //       height: $toggler-part-height;
-  //       background: $toggler-part-bg-color;
-  //     }
-  //   }
-  // }
 }
+.close:hover {
+  opacity: 0.4;
+}
+.close:before, .close:after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: ' ';
+  width: 14px;
+  height: 1px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+.close:before {
+  transform: translateX(-50%) rotate(45deg);
+}
+.close:after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+

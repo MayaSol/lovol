@@ -1,0 +1,94 @@
+// В этом файле должны быть стили для БЭМ-блока features, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.features {
+
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  margin-top: 30px;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto;
+  gap: 30px 0;
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: auto auto;
+    gap: 30px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-top: 72px;
+    gap: 90px 155px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+
+    @media (min-width: $screen-md) {
+      align-items: center;
+    }
+
+    @media (min-width: $screen-xl) {
+      gap: 0 42px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: $tw-blue-900;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    box-shadow: 0px 11px 58px rgba(107, 138, 160, 0.2);
+    border-radius: 10px;
+
+    @media (min-width: $screen-xl) {
+      width: 121px;
+      height: 121px;
+      grid-row-end: 3;
+    }
+
+    i {
+      color: #fff;
+      font-size: 30px;
+
+     @media (min-width: $screen-xl) {
+      font-size: 52px;
+     }
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: $tw-gray-600;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 14px;
+    color: $tw-slate-400;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @media (min-width: $screen-xl) {
+      grid-column-start: 2;
+    }
+  }
+}

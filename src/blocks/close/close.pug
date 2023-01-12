@@ -1,13 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (close)
 
-mixin close(label, mods)
-
-  //- Принимает:
-  //-   label {string} - описание, значение атрибута aria-label
-  //-   mods {string}  - стилевые модификаторы
-  //- Вызов:
-        +close('Закрыть')
-        +close('Закрыть', 'sm')
+mixin close(props={}, mods)
 
   -
     // список модификаторов
@@ -19,5 +12,6 @@ mixin close(label, mods)
       }
     }
 
-  button.close(class=allMods, type='button', aria-label=label, title=label)&attributes(attributes)
-    span= label
+  button.close(class=allMods, type='button', aria-label=props.title, title=props.title)&attributes(attributes)
+    if (props.label)
+      span= label

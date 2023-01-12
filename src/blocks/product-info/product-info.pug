@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-info)
+
+mixin product-info(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-info('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-info--' + modsList[i].trim();
+      }
+    }
+
+  .product-info(class=allMods)&attributes(attributes)
+    block
+
+
+

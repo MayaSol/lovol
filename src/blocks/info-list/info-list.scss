@@ -1,0 +1,158 @@
+// В этом файле должны быть стили для БЭМ-блока info-list, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.info-list {
+
+  $block-name: &; // #{$block-name}__element
+
+  counter-reset: howtobuy;
+  margin-top: 30px;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    margin-bottom: 25px;
+
+    &::before {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      align-self: end;
+      margin-right: 15px;
+      font-family: 'Oswald';
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.1;
+      color: $tw-orange-500;
+      background: none;
+      counter-increment: howtobuy;
+      content: counter(howtobuy);
+
+      @media (min-width: $screen-md) {
+        align-self: start;
+      }
+
+      @media (min-width: $screen-xl) {
+        align-self: end;
+        margin-left: 40px;
+        font-size: 202px;
+        line-height: 0.9;
+        background: linear-gradient(180deg, #FFAC2F 0%, #FF8C2D 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+
+    &::after {
+      @media (min-width: $screen-xl) {
+        content: '';
+        height: 60px;
+        width: 315px;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: end;
+        background-color: $body-bg;
+        // background: linear-gradient(180deg, transparent 42%, red 42%);
+        box-shadow: -23px -35px 21px -25px rgba(69,87,100,0.2);
+        transform: rotate(-48deg) translateY(-18px);
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        @media (min-width: $screen-xl) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: end;
+    margin-right: 10px;
+    z-index: 10;
+
+    @media (min-width: $screen-md) {
+      align-self: start;
+      margin-top: 2px;
+    }
+
+    @media (min-width: $screen-xl) {
+      align-self: end;
+    }
+
+    i {
+      font-size: 20px;
+      line-height: 1;
+      color: $tw-blue-900;
+
+      @media (min-width: $screen-xl) {
+        display: block;
+        font-size: 38px;
+      }
+    }
+  }
+
+  &__title {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    align-self: end;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+    color: $tw-gray-600;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-md) {
+      align-self: start;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      margin-top: 32px;
+      font-size: 22px;
+      line-height: 1;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      align-self: end;
+    }
+  }
+
+  &__text {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: 15px;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 14px;
+    color: $tw-slate-400;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 25px;
+      grid-column-start: 2;
+      grid-row-start: 3;
+    }
+  }
+}
