@@ -16,6 +16,8 @@ mixin modal(props={}, mods)
     .modal__overlay(tabindex='-1' data-modal-close)
       .modal__container(role='dialog' aria-modal='true' aria-labelledby= props.title)
         header.modal__header
+          if (props.title)
+            .modal__title= props.title
           +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-custom-close)
         .modal__inner
           block

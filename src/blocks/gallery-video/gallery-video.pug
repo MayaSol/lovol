@@ -1,0 +1,47 @@
+//- Все примеси в этом файле должны начинаться c имени блока (gallery-video)
+
+mixin gallery-video(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +gallery-video('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' gallery-video--' + modsList[i].trim();
+      }
+    }
+
+  .gallery-video(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin gallery-video-thumb(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' gallery-video__thumb--' + modsList[i].trim();
+      }
+    }
+
+  a.gallery-video__thumb(class=allMods)(
+        data-lg-size=props.lg_size
+        data-src=props.video_src
+        data-poster=props.poster_src
+        data-sub-html=`<h4>${props.sub}</h4>`
+      )&attributes(attributes)
+        img(
+          class="img-responsive"
+          src=props.thumb_src
+        )

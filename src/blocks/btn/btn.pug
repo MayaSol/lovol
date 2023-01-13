@@ -34,3 +34,24 @@ mixin btn(text, mods, isInput)
   else
     button.btn(class=allMods)&attributes(attributes)!= text
       block
+
+
+mixin btn-icon(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' btn--' + modsList[i].trim();
+      }
+    }
+
+    if (typeof props.classes === 'undefined') {
+      props.classes = '';
+    }
+
+  +btn(
+    `<span>${props.text}</span><svg class="icon" width="${props.icon_width}" height="${props.icon_height}"><use xlink:href="/img/sprite.svg#${props.icon_name}"></use></svg>`,
+    'clean, icon')(class=allMods)&attributes(attributes)

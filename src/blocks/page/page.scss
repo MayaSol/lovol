@@ -73,6 +73,7 @@
   font-display: swap;
 }
 
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
@@ -615,6 +616,7 @@ pre {
 
 .section-howtobuy {
   position: relative;
+  overflow: hidden;
 
   @media (min-width: $screen-xl) {
     &::before {
@@ -663,8 +665,23 @@ pre {
   }
 }
 
+
+.section-pricing {
+  margin-top: 70px;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: $screen-lg) {
+    display: block;
+  }
+}
+
 .section-reviews {
   @include background-text;
+  overflow: hidden;
 
   &::before {
     @media (min-width: $screen-xl) {
@@ -722,6 +739,15 @@ pre {
       margin-bottom: 20px;
     }
   }
+}
+
+.lg-outer {
+  top: 51px;
+  height: 90%;
+}
+
+.hide-text {
+  @include hide-text;
 }
 
 // .container {

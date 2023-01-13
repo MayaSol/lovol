@@ -3,6 +3,7 @@ module.exports = {
   separator: '_',
   theme: {
     screens: {
+      sm: '480px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
@@ -35,6 +36,7 @@ module.exports = {
     },
     colors: ({ colors }) => ({
       inherit: 'inherit',
+      black: '#33434E',
       slate: {
         50: '#f8fafc',
         100: '#f1f5f9',

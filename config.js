@@ -25,6 +25,9 @@ let config = {
     'src/scss/mixins.scss',
     'src/scss/awesome/fontawesome.scss',
     'src/scss/awesome/solid.scss',
+    'lightgallery/scss/lightgallery.scss',
+    'lightgallery/scss/lg-thumbnail.scss',
+    'lightgallery/scss/lg-video.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -33,6 +36,7 @@ let config = {
   ],
   'addJsBefore': [
     'bootstrap/js/dist/tab.js',
+    'lightgallery/lightgallery.min.js',
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [
@@ -45,6 +49,7 @@ let config = {
     'src/blocks/sprite-svg/img/sprite.svg': 'img/',
     'src/img/screens/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/images/*.gif': 'images/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },

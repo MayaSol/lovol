@@ -1,0 +1,35 @@
+// В этом файле должны быть стили для БЭМ-блока thumb-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.thumb-card {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: inline-block;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__img {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__gallery {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}

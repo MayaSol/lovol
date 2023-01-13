@@ -1,0 +1,54 @@
+//- Все примеси в этом файле должны начинаться c имени блока (media)
+
+mixin media(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +media('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' media--' + modsList[i].trim();
+      }
+    }
+
+  .media(class=allMods)&attributes(attributes)
+    block
+
+mixin media-item(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +media('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' media__item--' + modsList[i].trim();
+      }
+    }
+
+  .media__item(class=allMods)&attributes(attributes)
+    .media__img
+      img(src=props.url)
+    .media__title= props.title
+    .media__text= props.text
+    +btn-icon({
+      text: 'Подробнее',
+      icon_name: 'arrow-right',
+      icon_width: '50',
+      icon_height: '8',
+    })(class='media__btn-more')&attributes(props.btn__attrs)
+    block
+

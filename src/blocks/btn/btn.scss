@@ -23,7 +23,7 @@
   text-decoration: none;
   text-transform: none;
   color: $text-color;
-  background-color: $gray-lightest;
+  background-color: transparent;
   background-image: none;
   cursor: pointer;
   overflow: hidden;
@@ -31,8 +31,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    // background-color: darken($gray-lightest, 10%);
+    color: $tw-black;
   }
 
   &:active,
@@ -139,6 +138,22 @@
     &:focus {
       color: #fff;
       background: linear-gradient(270deg, $tw-blue-900 -4.57%, $tw-blue-800 92.99%);
+    }
+  }
+
+  &--clean {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-left: 10px;
+      stroke: currentColor;
+      fill: currentColor;
     }
   }
 }

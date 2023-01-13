@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pricing)
+
+mixin pricing(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pricing('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' pricing--' + modsList[i].trim();
+      }
+    }
+
+  .pricing(class=allMods)&attributes(attributes)
+    .pricing__img
+      img(src=props.url alt='')
+    .pricing__info(data-backtext=props.backtext)
+      .pricing__title= props.title
+      .pricing__price
+        .pricing__value= props.value
+        .pricing__period= props.period
+      ul.pricing__list
+        li.pricing__item Social Media Marketing
+        li.pricing__item One Way Link Building
+        li.pricing__item 2 months rental
+        li.pricing__item 3 Press Releases
+        li.pricing__item One Way Link Building
+        li.pricing__item 5 Free Optimization
+        li.pricing__item 3 Press Releases
+      +btn('Выбрать','primary')(class='pricing__btn')
+    block

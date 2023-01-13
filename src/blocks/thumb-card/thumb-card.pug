@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (thumb-card)
+
+mixin thumb-card(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +thumb-card('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' thumb-card--' + modsList[i].trim();
+      }
+    }
+    if (props.gallery && props.gallery.length > 0) {
+      allMods = allMods + ' thumb-card--gallery';
+    }
+
+  .thumb-card(class=allMods)&attributes(attributes)
+    a.thumb-card__inner(href='#')
+    ul.thumb-card__gallery.hide-text
+      each thumb in props.gallery
+        li(data-src=thumb.href title=thumb.title)
+          img(src=thumb.href)
+    .thumb-card__img
+      img(src=props.url alt=props.title)
+

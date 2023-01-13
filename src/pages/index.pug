@@ -286,26 +286,27 @@ block content
         title: 'Provide quality equipments',
         text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
      })
-  section.section-howtobuy.section-container#howtobuy(data-backtext='Купить')
-    .section-title
-      .section-title__num 04
-      .section-title__caption Как купить трактор в <span>Авто Премиум</span>
-    .info-list
-      +info-list-item({
-        icon_classes: 'fa-solid fa-magnifying-glass',
-        title: 'Search your equipments',
-        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-      })
-      +info-list-item({
-        icon_classes: 'fa-solid fa-circle-half-stroke',
-        title: 'Compare your selection',
-        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-      })
-      +info-list-item({
-        icon_classes: 'fa-solid fa-book',
-        title: 'Book for rentals',
-        text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
-      })
+  section.section-howtobuy#howtobuy(data-backtext='Купить')
+    .section-container
+      .section-title
+        .section-title__num 04
+        .section-title__caption Как купить трактор в <span>Авто Премиум</span>
+      .info-list
+        +info-list-item({
+          icon_classes: 'fa-solid fa-magnifying-glass',
+          title: 'Search your equipments',
+          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+        })
+        +info-list-item({
+          icon_classes: 'fa-solid fa-circle-half-stroke',
+          title: 'Compare your selection',
+          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+        })
+        +info-list-item({
+          icon_classes: 'fa-solid fa-book',
+          title: 'Book for rentals',
+          text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
+        })
   section.section-about#aboutus(data-backtext='LOVOL')
       .about__img
         img(src='/img/TB754-cabin.png' alt='модель TB754')
@@ -362,11 +363,46 @@ block content
             name: 'Albert Francis',
             job: 'CEO @ Amazon'
           })
-  section#contacts
-    h2 Контакты
+  section.section-pricing.section-container#credit
+    .section-title
+      .section-title__num 06
+      .section-title__caption Кредит/Лизинг <span>выгодные программы</span>
+    +pricing({
+      title: 'Кредит',
+      value: 'от 11%',
+      period: 'в год',
+      url: '/img/pricing_01.jpg',
+      backtext: 'Кредит'
+    })
+    +pricing({
+      title: 'Лизинг',
+      value: 'от 11%',
+      period: 'в год',
+      url: '/img/pricing_02.jpg',
+      backtext: 'Лизинг'
+    },'left')
+  section.section-media.section-container#media
+    .section-title
+      .section-title__num 07
+      .section-title__caption Фото/видео <span>нашей техники</span>
+    .media
+      +media-item({
+        url: '/img/media_01.jpg',
+        title: 'Generator Components Which You Should Know',
+        text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
+        btn__attrs: {'data-custom-open': 'galleries-all'}
+      })
+      +media-item({
+        url: '/img/media_02.jpg',
+        title: 'Generator Components Which You Should Know',
+        text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
+        btn__attrs: {'data-custom-open': 'gallery-video'}
+      })
+  section.section-contacts#contacts
+
 
 block append page-bottom
-  +modal({id: 'product-details', title: 'Товар 1'})
+  +modal({id: 'product-details'})
     +product-info
       .product-info__main
         .product-info__slider
@@ -408,3 +444,79 @@ block append page-bottom
           .consult__title Нужна консультация?
           p Наши специалисты ответят на любой интересующий вопрос
           +btn('Задать вопрос','submit')
+  +modal({id: 'galleries-all', title: 'Фотогалереи'})
+    .gallery__list
+      +thumb-card({
+        gallery: [
+          {
+            title: 'Галерея 1 - Фото 1',
+            href: '/img/TB604-cabin.jpg'
+          },
+          {
+            title: 'Галерея 1 - Фото 2',
+            href: '/img/TE244-cabin.jpg'
+          },
+          {
+            title: 'Галерея 1 - Фото 3',
+            href: '/img/TE244-no-cabin.jpg'
+          }
+        ],
+        url: '/img/TB604-cabin.jpg'
+      })
+      +thumb-card({
+        gallery: [
+          {
+            title: 'Галерея 2 - Фото 1',
+            href: '/img/TB604-cabin.jpg'
+          },
+          {
+            title: 'Галерея 2 - Фото 2',
+            href: '/img/TE244-cabin.jpg'
+          },
+          {
+            title: 'Галерея 2 - Фото 3',
+            href: '/img/TE244-no-cabin.jpg'
+          }
+        ],
+        url: '/img/TE244-cabin.jpg'
+      })
+      +thumb-card({
+        gallery: [
+          {
+            title: 'Галерея 3 - Фото 1',
+            href: '/img/TB604-cabin.jpg'
+          },
+          {
+            title: 'Галерея 3 - Фото 2',
+            href: '/img/TE244-cabin.jpg'
+          },
+          {
+            title: 'Галерея 3 - Фото 3',
+            href: '/img/TE244-no-cabin.jpg'
+          }
+        ],
+        url: '/img/TE244-no-cabin.jpg'
+      })
+  +modal({id: 'gallery-video', title: 'Видео'})
+    .gallery-video#gallery-video-list
+      +gallery-video-thumb({
+        lg_size: "1280-720",
+        video_src: "https://www.youtube.com/watch?v=YdtBEFK_HgI",
+        poster_src: "https://img.youtube.com/vi/YdtBEFK_HgI/hqdefault.jpg",
+        thumb_src: "https://img.youtube.com/vi/YdtBEFK_HgI/default.jpg",
+        sub: "Visual Soundscapes - Mountains | Planet Earth II | BBC"
+      })
+      +gallery-video-thumb({
+        lg_size: "1280-720",
+        video_src: "https://www.youtube.com/watch?v=D0UnqGm_miA",
+        poster_src: "https://img.youtube.com/vi/D0UnqGm_miA/hqdefault.jpg",
+        thumb_src: "https://img.youtube.com/vi/D0UnqGm_miA/default.jpg",
+        sub: "Dummy Video For Website"
+      })
+      +gallery-video-thumb({
+        lg_size: "1280-720",
+        video_src: "https://www.youtube.com/watch?v=a9RC_FLtWLU",
+        poster_src: "https://img.youtube.com/vi/a9RC_FLtWLU/hqdefault.jpg",
+        thumb_src: "https://img.youtube.com/vi/a9RC_FLtWLU/default.jpg",
+        sub: "Sunrise above clouds from plane to Spain"
+      })

@@ -1,0 +1,135 @@
+// В этом файле должны быть стили для БЭМ-блока pricing, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.pricing {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 90px;
+  margin-top: 90px;
+
+  @media (min-width: $screen-md) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: $screen-lg) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 170px;
+  }
+
+  &__info {
+    @include background-text;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 86px 50px 110px 50px;
+    background-color: #fff;
+    box-shadow: 0px 46px 54px -22px rgba(0, 89, 139, 0.18);
+
+    @media (min-width: $screen-lg) {
+      width: 336px;
+      flex-shrink: 0;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 30px;
+      font-family: 'Montserrat';
+      font-weight: 800;
+      font-size: 129px;
+      line-height: 0.9;
+      height: 110px;
+      background-color: #E3EAF0;
+      white-space: nowrap;
+      opacity: 0.4;
+      text-transform: none;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      margin-right: -52px;
+    }
+
+    #{$block-name}--left & {
+      @media (min-width: $screen-lg) {
+        margin-left: -52px;
+        order: 2;
+      }
+    }
+  }
+
+  &__title {
+    @include title-block;
+    left: 30px;
+    font-weight: 400;
+    font-size: 25px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__value {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1;
+    color: $tw-black;
+  }
+
+  &__period {
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1;
+    color: $tw-slate-600;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: $tw-black;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(359.75deg, #015FE7 0.39%, #03B0EE 99.69%);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+  }
+}

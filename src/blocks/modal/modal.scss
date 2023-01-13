@@ -52,10 +52,19 @@
     @media (min-width: $screen-3xl) {
       padding: 30px 40px;
     }
+
+    #galleries-all &,
+    #gallery-video & {
+      max-width: 500px;
+    }
   }
 
   &__inner {
-
+    #galleries-all & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__header {
