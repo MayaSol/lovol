@@ -37,6 +37,7 @@ module.exports = {
     colors: ({ colors }) => ({
       inherit: 'inherit',
       black: '#33434E',
+      white: '#fff',
       slate: {
         50: '#f8fafc',
         100: '#f1f5f9',
@@ -52,7 +53,8 @@ module.exports = {
       },
       gray: {
         50: '#F0F0F0',
-        100: '#f3f4f6',
+        75: '#F4F4F4',
+        100: '#F8F8F8',
         200: '#E6E6E6',
         250: '#C3D3DD',
         300: '#d1d5db',
@@ -86,6 +88,7 @@ module.exports = {
         500: '#3b82f6',
         600: '#2563eb',
         700: '#1d4ed8',
+        750: '#003154',
         800: '#002E50',
         850: '#06375A',
         900: '#011450',

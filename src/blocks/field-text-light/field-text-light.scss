@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока field-text-light, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.field-text-light {
+
+  $block-name:                &; // #{$block-name}__element
+  display: block;
+  position: relative;
+
+  &__input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+    margin: 0;
+    padding: 13px 15px 13px 45px;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.355em;
+    color: $tw-white;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-bottom: 1px solid $tw-gray-100;
+    opacity: 0.5;
+    -moz-appearance: textfield; // stylelint-disable-line
+    appearance: textfield;
+  }
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: calc(0.6em + 13px);
+    transform: translateY(-50%);
+    color: $tw-gray-100;
+  }
+
+  &--phone {
+  }
+}

@@ -398,7 +398,53 @@ block content
         text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
         btn__attrs: {'data-custom-open': 'gallery-video'}
       })
-  section.section-contacts#contacts
+  section.section-contacts#contacts(data-backtext='Контакты')
+    .contacts
+      .container
+        .contacts__title Связаться с нами
+        .contacts__inner
+          .contacts__section.contacts__section--form
+            .contacts__section-inner
+              .contacts__tagline Появились вопросы?<br> Просто оставьте свой телефон
+              .contacts__text Сделайте новый шаг в вашем бизнесе!
+              form.form-contacts
+                +field-text-light({
+                  mods: 'phone',
+                  icon_classes: 'fa-regular fa-phone',
+                  attrs: {
+                    'name': 'phone',
+                    'placeholder': 'Ваш телефон'
+                  }
+                })
+                +field-text-light({
+                  mods: 'message',
+                  icon_classes: 'fa-solid fa-pen-to-square',
+                  isTextarea: 'true',
+                  attrs: {
+                    'name': 'message',
+                    'placeholder': 'Ваш вопрос',
+                  }
+                })
+                +btn-icon({
+                  text: 'Отправить',
+                  icon_name: 'arrow-right',
+                  icon_width: '50',
+                  icon_height: '8',
+                })(class='form-contacts__submit')
+          .contacts__section.grow.flex
+            .contacts__section-lines
+              .contacts__line
+                i.fa-solid.fa-location-dot
+                span 48 st. livas road, San francisco, california, USA
+              .contacts__line
+                i.fa-solid.fa-phone
+                span +01 4325 7678
+              .contacts__line
+                i.fa-regular.fa-envelope
+                span excavator@sample.com
+          .contacts__vertical
+            span Связаться с нами
+
 
 
 block append page-bottom

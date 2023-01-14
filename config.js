@@ -37,6 +37,7 @@ let config = {
   'addJsBefore': [
     'bootstrap/js/dist/tab.js',
     'lightgallery/lightgallery.min.js',
+    '../blocks/field-text/field-text.js'
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [

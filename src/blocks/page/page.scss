@@ -698,6 +698,29 @@ pre {
   }
 }
 
+.section-contacts {
+  padding-top: 70px;
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    @include background-text;
+    padding-top: 160px;
+  }
+
+  &::before {
+    @media (min-width: $screen-xl) {
+      line-height: 190px;
+      height: 228px;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, #7695AB 2.38%, rgba(91, 117, 136, 0.21) 79.08%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      opacity: 0.3;
+    }
+  }
+}
+
 .swiper-navbtn {
   position: relative;
   width: 43px;
@@ -722,12 +745,12 @@ pre {
     background-image: url('/img/arrow-left-white.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 
   &--next {
     &::before {
-      transform: translate(-50%,-50%) rotate(180deg);
+      transform: translate(-50%, -50%) rotate(180deg);
     }
   }
 
