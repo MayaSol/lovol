@@ -13,8 +13,6 @@
     @include field-name;
   }
 
-  &__select-wrap {}
-
   .form-find & {
     margin-bottom: 25px;
 
@@ -32,6 +30,9 @@
     }
     &:nth-child(5) {
       z-index: 6;
+    }
+    &:last-child {
+      margin-right: 0;
     }
 
     @media (min-width: $screen-lg) {
@@ -135,8 +136,8 @@
     position: absolute;
     top: 26px;
     right: 20px;
-    width: 12px;
-    height: 6px;
+    width: 14px;
+    height: 7px;
     // border-left: 2px solid #3B5566;
     // border-bottom: 2px solid #3B5566;
     pointer-events: none;

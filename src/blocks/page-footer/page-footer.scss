@@ -2,4 +2,189 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-footer {}
+.page-footer {
+  padding: 30px 0;
+  color: $tw-slate-400;
+  background-color: #E9EBEC;
+
+  @media (min-width: $screen-lg) {
+    padding: 85px 0;
+  }
+
+  &__inner {
+
+    @media (min-width: $screen-sm) {
+      display: grid;
+      grid-templage-columns: auto auto;
+    }
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 60px;
+    color: $tw-gray-600;
+  }
+
+  &__section {
+    margin-bottom: 30px;
+    color: $tw-slate-400;
+
+    &:first-child {
+      @media (min-width: $screen-md) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $screen-md) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $screen-md) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 0;
+    }
+
+    &--contacts {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      @media (min-width: $screen-md) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+
+    &--subscribe {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      @media (min-width: $screen-md) {
+        grid-column-start: 4;
+        grid-column-end: 7;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 300px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        width: 360px;
+      }
+
+      @media (min-width: $screen-3xl) {
+        width: 380px;
+      }
+    }
+  }
+
+  .nav-arrow__item {
+    display: block;
+    margin-bottom: 15px;
+    color: $tw-slate-400;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-slate-900;
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: $tw-slate-400;
+
+    i {
+      margin-right: 12px;
+      font-size: 14px;
+      color: $tw-blue-800;
+    }
+
+    &--mail {
+      span {
+        font-family: 'OpenSans';
+        font-weight: 700;
+        font-size: 17px;
+        color: $tw-orange-500;
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 34px;
+    padding-bottom: 30px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.1;
+    color: #475966;
+    background-color: rgba(5, 54, 89, 0.1);
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+  }
+
+  &__socials-text {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #475966;
+
+    i {
+      font-size: 18px;
+      color: #475966;
+    }
+  }
+}

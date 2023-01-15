@@ -6,10 +6,16 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
   margin-top: 40px;
 
   @media (min-width: $screen-xl) {
-    max-width: 725px;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__inner {
+    max-width: 745px;
     margin-left: auto;
   }
 
@@ -111,6 +117,28 @@
       grid-column-end: 3;
       grid-row-start: 3;
       grid-row-end: 4;
+    }
+  }
+
+  &__particles {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: -40px;
+    width: 430px;
+    height: 430px;
+  }
+
+  &__particles-inner {
+    position: relative;
+    width: 280px;
+    height: 280px;
+
+    @media (min-width: $screen-xl) {
+      width: 390px;
+      height: 390px;
     }
   }
 }

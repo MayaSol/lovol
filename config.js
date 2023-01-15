@@ -24,7 +24,9 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/awesome/fontawesome.scss',
+    'src/scss/awesome/regular.scss',
     'src/scss/awesome/solid.scss',
+    'src/scss/awesome/brands.scss',
     'lightgallery/scss/lightgallery.scss',
     'lightgallery/scss/lg-thumbnail.scss',
     'lightgallery/scss/lg-video.scss',
@@ -37,7 +39,8 @@ let config = {
   'addJsBefore': [
     'bootstrap/js/dist/tab.js',
     'lightgallery/lightgallery.min.js',
-    '../blocks/field-text/field-text.js'
+    '../blocks/field-text/field-text.js',
+    'particles.js/particles.js'
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [

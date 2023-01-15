@@ -14,10 +14,25 @@
 
   &__input-wrap {
     display: block;
+
+    #{$block-name}--arrow-right & {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 66px;
+        height: 7px;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('/img/arrow-right-long.svg');
+      }
+    }
   }
 
   &__input {
-    @include field-text;
+    @include field-text-square;
 
     @at-root textarea#{&} {
       $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);

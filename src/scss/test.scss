@@ -1,3 +1,55 @@
+/* * {
+  color: red !important;
+}
+
+.form.form-find {
+  background-color: transparent !important;
+  outline: 1px solid red;
+}
+
+.form-find__title {
+  background-color: transparent !important;
+  outline: 1px solid red;
+
+  &::before {
+    background-color: transparent !important;
+  }
+}
+
+.choices__inner {
+  background-color: transparent !important;
+  outline: 1px solid red;
+}
+
+.info-list__item {
+  &::before {
+    outline: 1px solid red;
+  }
+}
+
+.media__img {
+  outline: 1px solid red;
+
+  img {
+    opacity: 0;
+  }
+}
+
+.contacts {
+  background-color: transparent !important;
+}
+
+.contacts::before {
+  background-color: transparent !important;
+  background-image: none !important;
+  outline: 1px solid red;
+}
+
+.contacts::after {
+  opacity: 0;
+}
+
 .modal {
   // display: block !important;
 }
+ */

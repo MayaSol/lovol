@@ -286,6 +286,9 @@ block content
         title: 'Provide quality equipments',
         text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
      })
+    .section-choose__particles.particles__wrapper
+      .section-chooose__particles-inner
+        .particles-js#choose-particles
   section.section-howtobuy#howtobuy(data-backtext='Купить')
     .section-container
       .section-title
@@ -386,18 +389,24 @@ block content
       .section-title__num 07
       .section-title__caption Фото/видео <span>нашей техники</span>
     .media
-      +media-item({
-        url: '/img/media_01.jpg',
-        title: 'Generator Components Which You Should Know',
-        text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
-        btn__attrs: {'data-custom-open': 'galleries-all'}
-      })
-      +media-item({
-        url: '/img/media_02.jpg',
-        title: 'Generator Components Which You Should Know',
-        text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
-        btn__attrs: {'data-custom-open': 'gallery-video'}
-      })
+      .media__inner
+        .media__item-list
+          +media-item({
+            url: '/img/media_01.jpg',
+            title: 'Generator Components Which You Should Know',
+            text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
+            btn__attrs: {'data-custom-open': 'galleries-all'}
+          })
+          +media-item({
+            url: '/img/media_02.jpg',
+            title: 'Generator Components Which You Should Know',
+            text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
+            btn__attrs: {'data-custom-open': 'gallery-video'}
+          })
+        .media__particles.particles__wrapper
+          .media__particles-inner
+            .particles-js#media-particles
+
   section.section-contacts#contacts(data-backtext='Контакты')
     .contacts
       .container

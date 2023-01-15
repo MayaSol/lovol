@@ -21,14 +21,14 @@ ready(function(){
   console.log(swiperReviews);
 
   var sliderAmount = swiperReviews.el.getElementsByClassName('reviews-slider__amount')[0];
-  sliderAmount.textContent = slidesTotal;
+  sliderAmount.textContent = '0' + slidesTotal;
   var sliderCurrent = swiperReviews.el.getElementsByClassName('reviews-slider__current')[0];
-  sliderCurrent.textContent = swiperReviews.activeIndex;
+  sliderCurrent.textContent = '0' + swiperReviews.activeIndex;
 
   swiperReviews.on('slideChangeTransitionStart', function () {
     console.log('slide changed');
     console.log(this);
-    sliderCurrent.textContent = +this.slides[this.activeIndex].dataset.swiperSlideIndex + 1;
+    sliderCurrent.textContent = ('0' + (+this.slides[this.activeIndex].dataset.swiperSlideIndex + 1));
     console.log(this.trueIndex);
   });
 

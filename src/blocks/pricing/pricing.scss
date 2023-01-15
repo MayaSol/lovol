@@ -16,7 +16,19 @@
   @media (min-width: $screen-lg) {
     display: flex;
     align-items: center;
-    margin-bottom: 170px;
+    // overflow: hidden;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 0;
+    padding-top: 30px;
+    padding-bottom: 140px;
+
+    &:first-child {
+      padding-top: 90px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
   }
 
   &__info {
@@ -25,16 +37,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 86px 50px 110px 50px;
+    padding: 70px 50px 80px 50px;
     background-color: #fff;
     box-shadow: 0px 46px 54px -22px rgba(0, 89, 139, 0.18);
 
     @media (min-width: $screen-lg) {
       width: 336px;
+      padding-top: 86px;
+      padding-bottom: 110px;
       flex-shrink: 0;
     }
 
     &::before {
+      display: none;
       bottom: 0;
       left: 30px;
       font-family: 'Montserrat';
@@ -46,6 +61,11 @@
       white-space: nowrap;
       opacity: 0.4;
       text-transform: none;
+
+      @media (min-width: $screen-lg) {
+        display: block;
+        width: 600px;
+      }
     }
   }
 

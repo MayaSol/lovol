@@ -49,9 +49,60 @@ html(class='page  no-js', lang='ru')
 
       .page__footer-wrapper
         +page-footer()
-          block footer
-            p «Подвал»
-            p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
+          .page-footer__section
+            .page-footer__title Quick Links
+            a(href='#').nav-arrow__item Home
+            a(href='#').nav-arrow__item Our Products
+            a(href='#').nav-arrow__item Pricing
+            a(href='#').nav-arrow__item Blog
+            a(href='#').nav-arrow__item About
+            a(href='#').nav-arrow__item Contact
+          .page-footer__section
+            .page-footer__title Information
+            a(href='#').nav-arrow__item FAQ’s
+            a(href='#').nav-arrow__item Pricing Plans
+            a(href='#').nav-arrow__item Order Track
+            a(href='#').nav-arrow__item Your Order
+            a(href='#').nav-arrow__item Returns
+            a(href='#').nav-arrow__item Privacy Policy
+            a(href='#').nav-arrow__item Terms & COnditions
+          .page-footer__section
+            .page-footer__title Support
+            a(href='#').nav-arrow__item My Account
+            a(href='#').nav-arrow__item Terms of Use
+            a(href='#').nav-arrow__item Deliveries & Returns
+            a(href='#').nav-arrow__item Gift Card
+          .page-footer__section.page-footer__section--contacts
+            .page-footer__title Contact
+            a(href='#').page-footer__contact-item.page-footer__contact-item--mail
+              i.fa-regular.fa-envelope
+              span hello@foreveryoung.com
+            a(href='#').page-footer__contact-item.page-footer__contact-item--phone
+              i.fa-solid.fa-phone
+              span +1.878.433.294
+            a(href='#').page-footer__contact-item.page-footer__contact-item--address
+              i.fa-solid.fa-location-dot
+              span 1428 Chritopher Lane Florida, US 4259
+          .page-footer__section.page-footer__section--subscribe
+            .page-footer__title Subcribe Newsletter
+            p Hurry, provide your email id & subscribe our newsletter to stay updated
+            +field-text({
+              mods: 'arrow-right',
+              attrs: {
+                placeholder: 'Email ID'
+              }
+            })
+        .page-footer__bottom
+          .container
+            span.page-footer__copyright Copyright © 2020. All Rights Reserved.
+            .page-footer__socials
+              .page-footer__socials-text
+                span Социальные сети
+                <svg class="icon" width="60" height="7"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+              .page-foooter__socials-list
+                a(href='https://vk.com').page-footer__social-link.page-footer__social-link--vk
+                  i.fa-brands.fa-vk
+
 
     block page-bottom
       script(src='js/bundle.js')
