@@ -18,11 +18,19 @@ ready(function(){
       console.log(this.querySelector('.thumb-card__gallery'));
       var gallery = this.querySelector('.thumb-card__gallery');
       if (gallery) {
-        lightGallery(gallery,{
-          plugins: [lgThumbnail],
-        });
-        var firstImg = this.querySelector('.thumb-card__gallery > li:first-child');
-        firstImg.click();
+        var plugin;
+        if (!gallery.lightGalleryPlugin) {
+          plugin = lightGallery(gallery,{
+            plugins: [lgThumbnail],
+          });
+          gallery.lightGalleryPlugin = plugin;
+        }
+        else {
+          plugin = gallery.lightGalleryPlugin;
+        }
+        console.log(plugin);
+        // var firstImg = this.querySelector('.thumb-card__gallery > li:first-child');
+        plugin.openGallery(0);
       }
     })
   }

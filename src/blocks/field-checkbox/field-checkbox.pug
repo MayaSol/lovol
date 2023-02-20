@@ -57,6 +57,7 @@ mixin field-checkbox(checkboxes, title)
         label.field-checkbox__name
           input.field-checkbox__input(type='checkbox')&attributes(checkbox.attrs)
           span.field-checkbox__name-text!= checkbox.title
+          span.field-checkbox__switcher
         if(typeof(checkbox.helpText) !== 'undefined' && checkbox.helpText)
           .field-checkbox__help-text-wrap
             .field-checkbox__help-text!= checkbox.helpText

@@ -27,6 +27,11 @@
     opacity: 0.5;
     -moz-appearance: textfield; // stylelint-disable-line
     appearance: textfield;
+
+    #{$block-name}--gray & {
+      color: $tw-gray-600;
+      opacity: 1;
+    }
   }
 
   i {
@@ -39,4 +44,11 @@
 
   &--phone {
   }
+
+  &--gray {
+    color: $tw-gray-800;
+    border-bottom: 1px solid $tw-gray-500;
+  }
+
+
 }

@@ -121,14 +121,19 @@
   }
 
   &__particles {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: -40px;
-    width: 430px;
-    height: 430px;
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      left: -40px;
+      width: 430px;
+      height: 430px;
+    }
   }
 
   &__particles-inner {

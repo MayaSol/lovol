@@ -43,6 +43,6 @@ mixin info-list-item(props={}, mods)
   .info-list__item(class=allMods)&attributes(attributes)
     .info-list__icon
       i(class=props.icon_classes)
-    .info-list__title= props.title
+    .info-list__title!= props.title
     .info-list__text= props.text
     block

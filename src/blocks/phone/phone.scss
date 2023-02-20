@@ -6,6 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  font-family: 'Oswald';
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
@@ -13,16 +14,18 @@
   .page-header & {
     flex-shrink: 0;
     margin-left: auto;
-    margin-top: -10px;
     color: $tw-gray-600;
+
+    @media (min-width: $screen-lg) {
+      margin-top: -10px;
+    }
   }
 
   svg {
-    margin-right: 15px;
-    display: none;
+    margin-right: 5px;
 
     @media (min-width: $screen-sm) {
-      display: inline-block;
+      margin-right: 15px;
     }
   }
 

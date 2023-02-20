@@ -17,6 +17,18 @@
       width: 2px;
     }
   }
+
+  &.aside-form__close {
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
+
+    &::before,
+    &::after {
+      height: 23px;
+      width: 2px;
+    }
+  }
 }
 .close:hover {
   opacity: 0.4;

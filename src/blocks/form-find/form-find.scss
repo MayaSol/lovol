@@ -31,6 +31,10 @@
     padding-right: 40px;
   }
 
+  &__wrapper {
+    position: relative;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;

@@ -86,12 +86,14 @@ html(class='page  no-js', lang='ru')
           .page-footer__section.page-footer__section--subscribe
             .page-footer__title Subcribe Newsletter
             p Hurry, provide your email id & subscribe our newsletter to stay updated
-            +field-text({
-              mods: 'arrow-right',
-              attrs: {
-                placeholder: 'Email ID'
-              }
-            })
+            form
+              +field-text({
+                mods: 'arrow-right',
+                name: 'subscribe-email',
+                attrs: {
+                  placeholder: 'Email ID'
+                }
+              })
         .page-footer__bottom
           .container
             span.page-footer__copyright Copyright © 2020. All Rights Reserved.

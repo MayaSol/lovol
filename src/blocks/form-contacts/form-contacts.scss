@@ -46,7 +46,7 @@
   &__submit {
     width: 100%;
     margin-top: 20px;
-    color: $tw-gray-400;
+    color: #fff;
 
     @media (min-width: $screen-lg) {
       margin-top: 40px;
@@ -57,5 +57,9 @@
     &:active {
       color: #fff;
     }
+  }
+
+  .empty-message {
+    color: #fff;
   }
 }

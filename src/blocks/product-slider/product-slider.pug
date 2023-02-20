@@ -55,6 +55,11 @@ mixin product-slider-nav(props={}, mods)
   .product-slider-nav.swiper(class=allMods)&attributes(attributes)
     .product-slider-nav__inner.swiper-wrapper
       block
+    .product-slider-nav__navigation
+      button.product-slider-nav__nav-btn.product-slider-nav__nav-btn--prev
+        i.fa-solid.fa-angle-left
+      button.product-slider-nav__nav-btn.product-slider-nav__nav-btn--next
+        i.fa-solid.fa-angle-left
 
 mixin product-item-nav(props={}, mods)
 

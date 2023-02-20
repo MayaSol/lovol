@@ -29,4 +29,6 @@ mixin thumb-card(props={}, mods)
           img(src=thumb.href)
     .thumb-card__img
       img(src=props.url alt=props.title)
+      if (props.caption)
+        span= props.caption
 

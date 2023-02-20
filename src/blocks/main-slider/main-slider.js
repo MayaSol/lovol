@@ -1,10 +1,10 @@
 const ready = require('../../js/utils/documentReady.js');
-import Swiper, { Pagination } from 'swiper';
+import Swiper, { Pagination, Autoplay } from 'swiper';
 
 ready(function() {
   console.log('main-slider');
   const swiper = new Swiper('.main-slider', {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
     pagination: {
       el: '.main-slider__pagination',
       clickable: true,
@@ -12,8 +12,13 @@ ready(function() {
         return `<span class="${className}"><span class="${className}__inner"><span>${`0${index + 1}`.slice(-4)}</span></span></span>`;
       }
     },
-    speed: 400,
-    loop: true
+    speed: 2000,
+    loop: true,
+     autoplay: {
+       delay: 5000,
+     },
+    noSwipingSelector: 'button, a',
+    focusableElements: 'input, select, option, textarea, button, video, label, a',
   });
 
   // function onBulletClick(bullets) {

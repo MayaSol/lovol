@@ -1,0 +1,174 @@
+// В этом файле должны быть стили для БЭМ-блока props_table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.props_table {
+
+  $block-name: &; // #{$block-name}__element
+
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+
+  td {
+    padding: 2px 0 2px 10px;
+    text-align: right
+  }
+
+  .char {
+    background: url(/img/dott.png) 0 15px repeat-x;
+  }
+
+  .char_name>span,
+  .char_value>span {
+    position: relative;
+    padding: 0;
+    display: inline-block;
+    color: #666;
+    background-color: $body-bg;
+  }
+
+  .char_name>span {
+    font-style: normal;
+    padding-right: 12px;
+    color: #555
+  }
+
+  .char_name .hint {
+    position: relative;
+    top: 1px;
+    margin: 0 0 0 3px;
+    display: inline-block
+  }
+
+  .char_name .hint .icon svg {
+    opacity: .35
+  }
+
+  .char_name .hint .icon:hover svg {
+    opacity: 1
+  }
+
+  .char_name .hint .tooltip {
+    visibility: hidden;
+    padding: 14px 18px;
+    left: -121px;
+    bottom: 26px;
+    width: 256px;
+    max-width: 256px;
+    opacity: 0;
+    font-size: .8667em;
+    line-height: 1.3846em;
+    color: #777;
+    border-radius: 3px;
+    background: #fff;
+    -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
+    transition: opacity .1s ease;
+    moz-transition: opacity .1s ease;
+    -ms-transition: opacity .3s ease;
+    -o-transition: opacity .1s ease;
+    -webkit-transition: opacity .1s ease
+  }
+
+  .char_name .hint .tooltip:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin: 0 0 0 -5px;
+    border: 5px solid transparent;
+    border-top: 5px solid #fff
+  }
+
+  .char_name .hint:hover .tooltip {
+    opacity: 1;
+    visibility: visible
+  }
+
+  .char_value {
+    width: 40%;
+    text-align: left
+  }
+
+  .char_value span {
+    padding-left: 10px;
+    right: -2px;
+    color: #333
+  }
+
+  .char_name .hint .icons {
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    left: 5px;
+    top: -12px;
+    height: 13px;
+    width: 13px;
+    background: url(/local/templates/aspro-priority/images/hint.jpg) 0 0 no-repeat
+  }
+
+  .char_value span ol,
+  .char_value span ul {
+    text-align: left
+  }
+
+  .char_value {
+    background: url(/local/templates/aspro-priority/css/../images/dott.png) 0 15px repeat-x;
+    text-align: right
+  }
+
+
+  .char_name span,
+  .char_value span {
+    color: #666 !important
+  }
+
+
+  tr td:first-child {
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 0
+  }
+
+  @media (max-width: $screen-sm) {
+    .char {
+      background-image: none
+    }
+
+    .char_name {
+      margin-top: 11px !important;
+      margin-bottom: -1px !important;
+      background-image: none;
+      display: block;
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .char_name span {
+      color: #777;
+      font-size: .867em;
+      line-height: 1.692em;
+      background-color: transparent;
+    }
+
+    .char_value {
+      background-image: none;
+      display: block;
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      line-height: 21px;
+      text-align: left
+    }
+
+    .char_value span {
+      padding-left: 0;
+      background-color: transparent;
+    }
+  }
+
+}

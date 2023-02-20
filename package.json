@@ -90,6 +90,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "animated-scroll-to": "^2.3.0",
     "autosize": "^4.0.2",
     "baron": "^3.0.3",
     "bootstrap": "^5.2.3",

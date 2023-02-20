@@ -1,0 +1,255 @@
+//- Все примеси в этом файле должны начинаться c имени блока (props_table)
+
+mixin props_table(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +props_table('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' props_table--' + modsList[i].trim();
+      }
+    }
+
+  table.props_table(class=allMods)&attributes(attributes)
+    <tbody>
+      <tr class="char">
+          <td class="char_name">
+              <span> Колесная формула </span>
+          </td>
+          <td class="char_value">
+              <span>4 x 4 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Размеры габаритные (ДхШхВ), мм </span>
+          </td>
+          <td class="char_value">
+              <span>3 225 х 1 475 х 2 025 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Тяговое усилие, кН (тс) </span>
+          </td>
+          <td class="char_value">
+              <span>6,5 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Колесная база, мм </span>
+          </td>
+          <td class="char_value">
+              <span>1639 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Колея колес, мм </span>
+          </td>
+          <td class="char_value">
+              <span>1400 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Размер передних колес </span>
+          </td>
+          <td class="char_value">
+              <span>6,0 - 16 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Размер задних колес </span>
+          </td>
+          <td class="char_value">
+              <span>9,5 - 24 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Радиус разворота, см </span>
+          </td>
+          <td class="char_value">
+              <span>320 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Дорожный/агрономический просвет, мм </span>
+          </td>
+          <td class="char_value">
+              <span>270/380 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Тормоза </span>
+          </td>
+          <td class="char_value">
+              <span>барабанные механические </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Модель двигателя </span>
+          </td>
+          <td class="char_value">
+              <span>КМ 385 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Тип двигателя трактора </span>
+          </td>
+          <td class="char_value">
+              <span>рядный дизель водяного охлаждения </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Число цилиндров / объем,см3 </span>
+          </td>
+          <td class="char_value">
+              <span>3 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Мощность, кВт (л.с.) </span>
+          </td>
+          <td class="char_value">
+              <span>25 л.с. </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Номинальные обороты коленвала, об/мин </span>
+          </td>
+          <td class="char_value">
+              <span>2350 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Макс.крутящий момент(H*м) </span>
+          </td>
+          <td class="char_value">
+              <span>90 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Удельный расход топлива, г/кВтч </span>
+          </td>
+          <td class="char_value">
+              <span>не более 260 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Свечи подогрева при запуске </span>
+          </td>
+          <td class="char_value">
+              <span>в камерах сгорания </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Число передач </span>
+          </td>
+          <td class="char_value">
+              <span>8 + 8 реверс </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Диапазон скоростей, км/ч </span>
+          </td>
+          <td class="char_value">
+              <span>1,72 – 26,02 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Частота вращения ВОМ, об/мин </span>
+          </td>
+          <td class="char_value">
+              <span>8 шлицев 540/1000 об/мин </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Тип навесной системы </span>
+          </td>
+          <td class="char_value">
+              <span>задняя трехточечная, I категории </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Выходы распределителя </span>
+          </td>
+          <td class="char_value">
+              <span>4 на заднюю навеску </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Сила подъема навески, кН </span>
+          </td>
+          <td class="char_value">
+              <span>не менее 5,2 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Рулевое управление </span>
+          </td>
+          <td class="char_value">
+              <span>гидрообъемное </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Хит продаж </span>
+          </td>
+          <td class="char_value">
+              <span>Хит&nbsp;/ Акция </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>VIN </span>
+          </td>
+          <td class="char_value">
+              <span>test-12342 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Максимальный крутящий момент, Нм </span>
+          </td>
+          <td class="char_value">
+              <span>90 </span>
+          </td>
+      </tr>
+      <tr class="char">
+          <td class="char_name">
+              <span>Масса снаряженная, кг </span>
+          </td>
+          <td class="char_value">
+              <span>1 430 </span>
+          </td>
+      </tr>
+    </tbody>

@@ -1,0 +1,67 @@
+//- Все примеси в этом файле должны начинаться c имени блока (aside-form)
+
+mixin aside-form(props={}, mods)
+
+  //- Принимает:
+  //-   props    {object} - параметры
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +aside-form('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' aside-form--' + modsList[i].trim();
+      }
+    }
+
+  .aside-form(class=allMods)&attributes(attributes)
+    .aside-form__overlay(data-aside-close)
+    .aside-form__content
+      .aside-form__header
+        .aside-form__title Задать вопрос
+        +close({title: 'Закрыть'})(class="aside-form__close" aria-label="Close modal" data-aside-close)
+      .aside-form__text Менеджеры компании с радостью ответят на ваши вопросы и произведут расчет стоимости услуг и подготовят индивидуальное коммерческое предложение.
+      form
+        +field-text-light({
+          mods: 'name, gray',
+          attrs: {
+            'name': 'name',
+            'placeholder': 'Ваше имя'
+          }
+        })
+        +field-text-light({
+          mods: 'phone, gray',
+          attrs: {
+            'name': 'phone',
+            'placeholder': 'Телефон'
+          }
+        })
+        +field-text-light({
+          mods: 'email, gray',
+          attrs: {
+            'name': 'email',
+            'placeholder': 'E-mail'
+          }
+        })
+        +field-text-light({
+          mods: 'msg, gray',
+          isTextarea: 'true',
+          attrs: {
+            'name': 'msg',
+            'placeholder': 'Сообщение'
+          }
+        })
+        +field-checkbox([
+          {
+            title: 'Я согласен на обработку персональных данных',
+            attrs: {
+              name: 'user-agreement',
+            }
+          },
+        ])
+        +btn('Отправить','primary')(type='submit' class='aside-form__submit')
+

@@ -23,7 +23,7 @@
 
   &__overlay {
     position: fixed;
-    top: 61px;
+    top: 51px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -34,7 +34,7 @@
     z-index: 9;
 
     @media (min-width: $screen-lg) {
-      top: 71px;
+      top: 51px;
     }
   }
 
@@ -44,7 +44,6 @@
     max-width: 1400px;
     max-height: 90vh;
     border-radius: 24px;
-    overflow-y: auto;
     background-color: $body-bg;
     box-sizing: border-box;
     box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
@@ -55,16 +54,34 @@
 
     #galleries-all &,
     #gallery-video & {
-      max-width: 500px;
+      max-width: 980px;
+
+      @media (min-width: $screen-xxl) {
+        max-width: 1370px;
+      }
     }
   }
 
   &__inner {
-    #galleries-all & {
+    max-height: 70vh;
+    padding-right: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    #product-details & {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
     }
+
+    @media (min-width: $screen-sm) {
+      padding-right: 10px;
+    }
+
+    // #galleries-all & {
+    //   display: flex;
+    //   justify-content: center;
+    // }
   }
 
   &__header {
@@ -81,8 +98,8 @@
   &__title {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 40px;
+    line-height: 45px;
     box-sizing: border-box;
 
     @media (min-width: $screen-lg) {
@@ -95,10 +112,6 @@
     border: 0;
     width: 23px;
     height: 23px;
-  }
-
-
-  &__content {
   }
 
   &__btn {

@@ -20,7 +20,7 @@ block content
           .main-slider__item-text
             .main-slider__item-tagline Engineering Service Company
             h2.main-slider__item-title Rent your <span>machine</span>
-            +btn('Reserve Now','primary')(href="#contacts")
+            +btn('Reserve Now','primary')
           .main-slider__item-img
             img(src='/img/TB604-cabin.jpg' alt='TB604')
         +main-slider-item()
@@ -29,140 +29,139 @@ block content
         +main-slider-item()
           h1 Item 3
           p Some text
-  section.section-find.section-container
+  section.section-find.section-container#catalog
     .section-title
       .section-title__num 01
       .section-title__caption Найди свой <span>лучший трактор</span>
-    .form-find__wrapper
-      +form()(class='form-find')
-        .form-find__title Подобрать спецтехнику
-        .form-find__inner
-          +field-select(
-            '',
+    +form()(class='form-find')
+      .form-find__title Подобрать спецтехнику
+      .form-find__inner
+        +field-select(
+          '',
+          {
+            name: 'testselect',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
             {
-              name: 'testselect',
-              id: 'select-demo',
-              'data-icon': 'tractor'
-            },
-            [
-              {
-                title: 'Мощность',
-                attrs: {
-                  value: '',
-                  selected: 'true'
-                }
-              },
-              {
-                title: 'Опция1',
-                attrs: {
-                  value: 'val01',
-                }
-              },
-              {
-                title: 'Опция2',
-                attrs: {
-                  value: 'val02',
-                }
+              title: 'Мощность',
+              attrs: {
+                value: '',
+                selected: 'true'
               }
-            ],
-            '',
-            'power'
-          )
-          +field-select(
-            '',
+            },
             {
-              name: 'select',
-              id: 'select-demo',
-              'data-icon': 'tractor'
-            },
-            [
-              {
-                title: 'Тяговое усилие',
-                attrs: {
-                  value: '',
-                  selected: 'true'
-                }
-              },
-              {
-                title: 'Опция1',
-                attrs: {
-                  value: 'val01',
-                }
-              },
-              {
-                title: 'Опция2',
-                attrs: {
-                  value: 'val02',
-                }
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
               }
-            ],
-            '',
-            'effort'
-          )
-          +field-select(
-            '',
+            },
             {
-              name: 'select',
-              id: 'select-demo',
-              'data-icon': 'tractor'
-            },
-            [
-              {
-                title: 'Сила подъема навески',
-                attrs: {
-                  value: '',
-                  selected: 'true'
-                }
-              },
-              {
-                title: 'Опция1',
-                attrs: {
-                  value: 'val01',
-                }
-              },
-              {
-                title: 'Опция2',
-                attrs: {
-                  value: 'val02',
-                }
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
               }
-            ],
-            '',
-            'force'
-          )
-          +field-select(
-            '',
+            }
+          ],
+          '',
+          'power'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
             {
-              name: 'select',
-              id: 'select-demo',
-              'data-icon': 'tractor'
-            },
-            [
-              {
-                title: 'Масса',
-                attrs: {
-                  value: '',
-                  selected: 'true'
-                }
-              },
-              {
-                title: 'Опция1',
-                attrs: {
-                  value: 'val01',
-                }
-              },
-              {
-                title: 'Опция2',
-                attrs: {
-                  value: 'val02',
-                }
+              title: 'Тяговое усилие',
+              attrs: {
+                value: '',
+                selected: 'true'
               }
-            ],
-            '',
-            'mass'
-          )
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'effort'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Сила подъема навески',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'force'
+        )
+        +field-select(
+          '',
+          {
+            name: 'select',
+            id: 'select-demo',
+            'data-icon': 'tractor'
+          },
+          [
+            {
+              title: 'Масса',
+              attrs: {
+                value: '',
+                selected: 'true'
+              }
+            },
+            {
+              title: 'Опция1',
+              attrs: {
+                value: 'val01',
+              }
+            },
+            {
+              title: 'Опция2',
+              attrs: {
+                value: 'val02',
+              }
+            }
+          ],
+          '',
+          'mass'
+        )
       +btn('Подобрать','primary')(class='form-find__submit')
-  section.section-catalog#popular(data-backtext='Рекомендуем')
+  section.section-catalog(data-backtext='Рекомендуем')
     .section-container
       .section-title
         .section-title__num 02
@@ -262,7 +261,7 @@ block content
                 +product-card({
                   src: '/img/TB604-cabin.jpg'
                 })
-  section.section-choose.section-container#block_64
+  section.section-choose.section-container
     .section-title
       .section-title__num 03
       .section-title__caption Почему стоит выбрать <span>нашу компанию</span>
@@ -291,7 +290,7 @@ block content
     .section-choose__particles.particles__wrapper
       .section-choose__particles-inner
         .particles-js#choose-particles
-  section#block_65(data-backtext='Купить')
+  section.section-howtobuy#howtobuy(data-backtext='Купить')
     .section-container
       .section-title
         .section-title__num 04
@@ -304,7 +303,7 @@ block content
         })
         +info-list-item({
           icon_classes: 'fa-solid fa-circle-half-stroke',
-          title: 'Оставить<br> заявку',
+          title: 'Compare your selection',
           text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
         })
         +info-list-item({
@@ -312,7 +311,7 @@ block content
           title: 'Book for rentals',
           text: 'Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam es qui dolorem ipsum quia dolor sit amet consectetur.'
         })
-  section.section-about
+  section.section-about#aboutus
       .about(data-backtext='LOVOL')
         .about__img
           img(src='/img/TB754-cabin.png' alt='модель TB754')
@@ -322,25 +321,25 @@ block content
       .about__list.section-container
         +about-item ({
           icon_classes: 'fa-solid fa-chart-line',
-          number: '118',
-          caption: '<span>стран,</span> <span>в которых продается Lovol</span>'
+          number: '28',
+          caption: 'finished project'
         })
         +about-item ({
           icon_classes: 'fa-solid fa-user-tie',
-          number: '1',
-          caption: '<span>место</span> <span>в китае по узнаваемости бренда</span>'
+          number: '18',
+          caption: 'Year of experience'
         })
         +about-item ({
           icon_classes: 'fa-solid fa-sack-dollar',
-          number: '64',
-          caption: '<span>место</span> <span>самые дорогие марки китая</span>'
+          number: '18',
+          caption: 'Investments'
         })
         +about-item ({
           icon_classes: 'fa-solid fa-users',
-          number: '15',
-          caption: '<span>тыс.</span> <span>людей, работащих на производствах</span>'
+          number: '18',
+          caption: 'Employees'
         })
-  section#block_66(data-backtext='Отзывы')
+  section.section-reviews#reviews(data-backtext='Отзывы')
     .section-container
       .section-title
         .section-title__num 05
@@ -368,7 +367,7 @@ block content
             name: 'Albert Francis',
             job: 'CEO @ Amazon'
           })
-  section.section-container#block_67
+  section.section-pricing.section-container#credit
     .section-title
       .section-title__num 06
       .section-title__caption Кредит/Лизинг <span>выгодные программы</span>
@@ -386,7 +385,7 @@ block content
       url: '/img/pricing_02.jpg',
       backtext: 'Лизинг'
     },'left')
-  section.section-container#block_gallary
+  section.section-media.section-container#media
     .section-title
       .section-title__num 07
       .section-title__caption Фото/видео <span>нашей техники</span>
@@ -395,14 +394,14 @@ block content
         .media__item-list
           +media-item({
             url: '/img/media_01.jpg',
-            title: 'Фотогалерея',
-            text: 'В данном разделе вы можете ознакомиться с фотографиями тракторной, сельхоз и коммунальной техники Lovol. У нас представлено большое количество фото спецтехники с разных ракурсов для более комфортного выбора.',
+            title: 'Generator Components Which You Should Know',
+            text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
             btn__attrs: {'data-custom-open': 'galleries-all'}
           })
           +media-item({
             url: '/img/media_02.jpg',
-            title: 'Видеогалерея',
-            text: 'В данном разделе вы можете ознакомиться с видео техники Lovol. У нас представлены видео ролики тракторной, сельхоз и коммунальной техники. Если вы не нашли какой-либо ролик трактора, то обратитесь к нам, мы вышлем вам его по почте.',
+            title: 'Generator Components Which You Should Know',
+            text: 'Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit Magna aliqua umt enimd mini venia quis ulamco aliquip commodo cons equat duis aute irue derit',
             btn__attrs: {'data-custom-open': 'gallery-video'}
           })
         .media__particles.particles__wrapper
@@ -454,7 +453,8 @@ block content
                 span excavator@sample.com
           .contacts__vertical
             span Связаться с нами
-  +aside-form({},'')(id='test')
+  +aside-form({},'show')(id='test')
+
 
 block append page-bottom
   +modal({id: 'product-details'})

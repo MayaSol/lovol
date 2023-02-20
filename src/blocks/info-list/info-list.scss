@@ -129,6 +129,14 @@
     color: $tw-gray-600;
     text-transform: uppercase;
 
+    br {
+      display: none;
+
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+
     @media (min-width: $screen-md) {
       align-self: start;
     }
@@ -141,13 +149,14 @@
       grid-row-start: 2;
       grid-row-end: 3;
       grid-column-start: 2;
-      grid-column-end: 3;
+      grid-column-end: 4;
       align-self: end;
     }
   }
 
   &__text {
     grid-row-start: 2;
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 4;
     margin-top: 15px;

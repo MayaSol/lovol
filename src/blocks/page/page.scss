@@ -598,25 +598,51 @@ pre {
   }
 }
 
-.section-catalog.section-container {
-  @media (min-width: $screen-xl) {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    // left: 50%;
-    // max-width: 1318px;
-    // margin-left: 0;
-    // margin-right: 0;
-    // transform: translateX(-584px);
+
+.section-catalog {
+  @include background-text;
+  margin-top: 70px;
+
+  @media (min-width: $screen-lg) {
+    overflow: hidden;
+  }
+
+  &::before {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      top: 0;
+      left: 100px;
+      background: linear-gradient(180deg, #7695AB 2.38%, rgba(91, 117, 136, 0.21) 93.2%);
+      opacity: 0.3;
+    }
+
+    @media (min-width: $screen-xl) {
+      left: 50%;
+      transform: translateX(-220px);
+    }
+  }
+
+  .section-container {
+    @media (min-width: $screen-xl) {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      // left: 50%;
+      // max-width: 1318px;
+      // margin-left: 0;
+      // margin-right: 0;
+      // transform: translateX(-584px);
+    }
   }
 }
 
-.section-catalog {
-  margin-top: 120px;
-}
 
 .section-choose {
   position: relative;
+
+  margin-top: 60px;
 
   @media (min-width: $screen-xxl) {
     margin-top: 140px;
@@ -631,15 +657,26 @@ pre {
   }
 
   &__particles {
+    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
 
-    @media (min-width: $screen-xxl) {
-      position: absolute;
+    @media (min-width: $screen-xl) {
+      display: block;
       width: 280px;
       height: 280px;
-      top: -140px;
-      right: -15px;
-      width: 551px;
-      height: 551px;
+      top: 0;
+      left: 60%;
+      width: 340px;
+      height: 340px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      top: -150px;
+      left: 60%;
+      width: 500px;
+      height: 500px;
     }
   }
 
@@ -654,23 +691,22 @@ pre {
   }
 }
 
-.section-howtobuy {
-  margin-top: 40px;
+//! Как купить
 
-  @media (min-width: $screen-xl) {
-    margin-top: 120px;
-  }
-}
-
-.section-howtobuy {
+#block_65 {
   position: relative;
+  margin-top: 40px;
+  width: 100%;
+  max-width: none;
   overflow: hidden;
 
   @media (min-width: $screen-xl) {
+    margin-top: 120px;
+
     &::before {
       content: attr(data-backtext);
       position: absolute;
-      left: 30%;
+      left: 50%;
       top: 0;
       height: 296px;
       width: 100%;
@@ -680,6 +716,7 @@ pre {
       line-height: 0.9;
       letter-spacing: -0.06em;
       text-transform: uppercase;
+      transform: translateX(-200px);
       background: linear-gradient(180deg, #7695AB 2.38%, rgba(91, 117, 136, 0.21) 79.08%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -690,31 +727,18 @@ pre {
 }
 
 .section-about {
-  @include background-text;
-  margin-top: 95px;
+  position: relative;
+  padding-top: 165px;
   margin-bottom: 90px;
 
   @media (min-width: $screen-lg) {
-    margin-top: 295px;
+    padding-top: 295px;
     margin-bottom: 290px;
-  }
-
-  &::before {
-    @media (min-width: $screen-xl) {
-      width: 800px;
-      left: 40%;
-      bottom: 0;
-      transform: translateX(-70%);
-      color: $tw-blue-850;
-      text-shadow: 0px 50px 74px #00111D;
-      opacity: 0.3;
-      z-index: 5;
-    }
   }
 }
 
-
-.section-pricing {
+//! Кредит/лизинг
+#block_67 {
   margin-top: 70px;
 
   @media (min-width: $screen-md) {
@@ -733,14 +757,17 @@ pre {
   }
 }
 
-.section-reviews {
+//! Отзывы
+#block_66 {
   @include background-text;
   overflow: hidden;
+  width: 100%;
+  max-width: none;
 
   &::before {
     @media (min-width: $screen-xl) {
       width: 100%;
-      left: 30%;
+      left: 50%;
       top: 30px;
       color: $tw-blue-850;
       color: transparent;
@@ -748,6 +775,7 @@ pre {
       background-clip: text;
       -webkit-background-clip: text;
       opacity: 0.3;
+      transform: translateX(-200px);
     }
   }
 }
@@ -764,6 +792,7 @@ pre {
 
   &::before {
     @media (min-width: $screen-xl) {
+      width: 1000px;
       line-height: 190px;
       font-size: 200px;
       height: 228px;
@@ -773,6 +802,11 @@ pre {
       background-clip: text;
       -webkit-background-clip: text;
       opacity: 0.3;
+    }
+
+    @media (min-width: $screen-3xl) {
+      left: 50%;
+      transform: translateX(-800px)
     }
   }
 }
@@ -857,7 +891,7 @@ pre {
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -879,6 +913,15 @@ pre {
   // }
 }
 
+.gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
 
 
 // .container {

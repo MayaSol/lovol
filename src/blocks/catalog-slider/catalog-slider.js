@@ -12,6 +12,11 @@ ready(function(){
     slidesPerView: 1,
     breakpoints: {
       // when window width is >= 320px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+        simulateTouch: false,
+      },
       1280: {
         slidesPerView: 2,
         spaceBetween: 80,

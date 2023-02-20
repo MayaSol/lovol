@@ -28,7 +28,9 @@ ready(function(){
 
     function onShow(modal) {
       console.info(`${modal.id} is shown`);
-      document.body.classList.add('noscroll')
+      var inner = modal.getElementsByClassName('modal__inner')[0];
+      inner && (inner.scrollTop = 0);
+      document.body.classList.add('noscroll');
     }
 
     function onClose(modal) {

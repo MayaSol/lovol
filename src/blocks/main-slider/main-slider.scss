@@ -24,6 +24,7 @@
     border-radius: 0 !important;
     opacity: 1;
     background-color: transparent;
+    box-shadow: none;
     transition: max-height 0.4s;
 
     &:hover,
@@ -126,7 +127,7 @@
     font-family: 'Montserrat';
     font-size: 40px;
     font-weight: 800;
-    line-height: 68%;
+    line-height: 80%;
     color: $tw-gray-600;
 
     span {
@@ -148,7 +149,7 @@
 
   &__item-tagline {
     position: relative;
-    width: 232px;
+    width: 280px;
     font-family: 'Oswald';
     font-size: 28px;
     font-weight: 500;

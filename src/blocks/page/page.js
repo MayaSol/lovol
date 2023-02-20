@@ -9,9 +9,9 @@ ready(function(){
     viewportHeight = window.innerHeight;
   }));
 
-  let navbar = document.getElementsByClassName('page-header')[0];
+  let navbar = document.querySelector('.page-header');
   let navPos = navbar.getBoundingClientRect().top;
-  let navLinks = navbar.getElementsByClassName('main-nav__link');
+  let navLinks = navbar.querySelectorAll('.main-nav__link');
   let navSections = {};
   let currentLink = navbar.querySelector('.main-nav__item:first-child');
   for (let i=0; i<navLinks.length; i++) {
@@ -19,6 +19,9 @@ ready(function(){
       navSections[navLinks[i].hash] = document.querySelector(navLinks[i].hash);
     }
   }
+
+  console.log('navSections');
+  console.log(navSections);
 
   toggleClassesOnScroll();
 
@@ -28,7 +31,8 @@ ready(function(){
   function toggleClassesOnScroll() {
     let scrollPos = window.scrollY;
     let navBarHeight = 0;
-    if (scrollPos > navPos) {
+    // if (scrollPos > navPos) {
+    if (scrollPos > 0) {
       document.body.classList.add('scrolled');
       let navBarHeight = navbar.offsetHeight;
     } else {
@@ -42,6 +46,8 @@ ready(function(){
     // console.log(scrollPos + viewportHeight);
 
     for (link of navLinks) {
+      // console.log(link);
+      // console.log(link.hash);
 
       if  (navSections[link.hash]) {
         // console.log(link.hash + ': ' + navSections[link.hash].offsetTop);
@@ -63,7 +69,11 @@ ready(function(){
             span.classList.add('main-nav__link');
             currentLink.append(span);
           }
-          span.textContent = navbar.querySelector(`.main-nav__link[href='${link.hash}']`).textContent;
+          // console.log(`.main-nav__link[href='${window.location.href.split('#')[0] + link.hash}']`);
+          var curLink = navbar.querySelector(`.main-nav__link[href='${link.hash}']`);
+          if (curLink) {
+            span.textContent = curLink.textContent;
+          }
         }
       }
     }

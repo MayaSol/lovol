@@ -7,9 +7,16 @@
   position: sticky;
   top: 0;
   background-color: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background-color 0.3;
+  border-bottom: 1px solid $tw-gray-400;
   z-index: 9999;
+
+  @media (min-width: $menu-desktop-width) {
+    border-bottom-color: transparent;
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    background-color: $body-bg;
+  }
 
   .scrolled & {
     background-color: $body-bg;
@@ -20,7 +27,9 @@
     display: flex;
     align-items: center;
     height: 154px;
-    transition: height 0.3s;
+    transform: translate3d(0,0,0);
+    -webkit-filter: blur(0);
+    transition: height 0.8s;
 
 
     &.container {
@@ -30,7 +39,9 @@
     }
 
     .logo__img {
-      transition: transform 0.3s;
+      transition: transform 0.8s;
+      transform: translate3d(0,0,0);
+      -webkit-filter: blur(0);
 
       @media (max-width: ($menu-desktop-width - 1)) {
         display: none;
@@ -38,14 +49,14 @@
     }
 
     .logo__caption {
-      transition: transform 0.3s;
+      transition: transform 0.8s;
     }
 
     .scrolled & {
       height: 50px;
 
       .logo__img {
-        transform: scale(0) translateY(0px);
+        transform: scale(0.01) translateY(0px);
       }
 
       .logo__caption {

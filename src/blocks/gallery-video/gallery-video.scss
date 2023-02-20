@@ -4,17 +4,5 @@
 
 .gallery-video {
 
-  $block-name:                &; // #{$block-name}__element
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  &__thumb {
-    margin-right: 20px;
-
-    &:last-child {
-      margin-right: 20px;
-    }
-  }
 }
